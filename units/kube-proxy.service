@@ -1,0 +1,14 @@
+[Unit]
+Description=Kubernetes Proxy
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+
+[Service]
+ExecStartPre=/usr/bin/wget -N -P /opt/bin http://storage.googleapis.com/k8s/proxy
+ExecStartPre=/usr/bin/chmod +x /opt/bin/proxy
+ExecStart=/opt/bin/proxy --etcd_servers=http://CONTROL-NODE-INTERNAL-IP:4001 --logtostderr=true
+Restart=always
+RestartSec=10
+
+[X-Fleet]
+Global=true
+MachineMetadata=role=knode

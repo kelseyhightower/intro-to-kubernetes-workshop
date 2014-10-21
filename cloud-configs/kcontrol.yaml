@@ -1,0 +1,21 @@
+#cloud-config
+
+coreos:
+  fleet:
+    etcd_servers: http://127.0.0.1:4001
+    metadata: role=control
+  etcd:
+    name: etcd
+    addr: $private_ipv4:4001
+    bind-addr: 0.0.0.0
+    peer-addr: $private_ipv4:7001
+    cluster-active-size: 1
+    snapshot: true
+  units:
+    - name: etcd.service
+      command: start
+    - name: fleet.service
+      command: start
+  update:
+    group: alpha
+    reboot-strategy: off

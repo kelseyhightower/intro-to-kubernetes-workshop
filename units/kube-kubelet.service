@@ -1,0 +1,22 @@
+[Unit]
+Description=Kubernetes Kubelet
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+Requires=setup-network-environment.service
+After=setup-network-environment.service
+
+[Service]
+EnvironmentFile=/etc/network-environment
+ExecStartPre=/usr/bin/wget -N -P /opt/bin http://storage.googleapis.com/k8s/kubelet
+ExecStartPre=/usr/bin/chmod +x /opt/bin/kubelet
+ExecStart=/opt/bin/kubelet \
+--address=0.0.0.0 \
+--port=10250 \
+--hostname_override=${DEFAULT_IPV4} \
+--etcd_servers=http://CONTROL-NODE-INTERNAL-IP:4001 \
+--logtostderr=true
+Restart=always
+RestartSec=10
+
+[X-Fleet]
+Global=true
+MachineMetadata=role=knode
