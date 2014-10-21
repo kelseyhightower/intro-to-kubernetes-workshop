@@ -39,3 +39,12 @@ wget http://storage.googleapis.com/k8s/linux/fleetctl
 ```
 wget http://storage.googleapis.com/k8s/linux/kubecfg
 ```
+
+## Add client tools to your path
+
+```
+chmod +x etcdctl fleetctl kubecfg
+mkdir -p /usr/local/bin/
+mv etcdctl fleetctl kubecfg /usr/local/bin/
+```
+
