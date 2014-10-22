@@ -3,10 +3,6 @@
 ## Workspace
 
 ```
-git clone https://github.com/kelseyhightower/intro-to-kubernetes-workshop.git
-```
-
-```
 cd intro-to-kubernetes-workshop/cloud-configs
 ```
 
@@ -137,4 +133,3 @@ fleetctl list-machines
 gcloud compute instances delete knode1 knode2 knode3 knode4 knode5 kcontrol \
 --zone us-central1-a --delete-disks all
 ```
-

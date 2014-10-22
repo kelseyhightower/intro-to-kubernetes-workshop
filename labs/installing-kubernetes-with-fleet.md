@@ -24,20 +24,17 @@ sed -i "" -e 's/CONTROL-NODE-INTERNAL-IP/${KCONTROL_INTERNAL_IP}/g' *
 
 ## Deploying services
 
-Take a moment to review the Kubernetes services files
+Review running units
 
 ```
-ls *.service
-```
-
-Review machines and running units
-
-```
-fleetctl list-machines
 fleetctl list-units
 ```
 
 ### Kubelet
+
+```
+cat kube-kubelet.service
+```
 
 ```
 fleetctl start kube-kubelet.service 
@@ -46,10 +43,18 @@ fleetctl start kube-kubelet.service
 ### Kubernetes Proxy
 
 ```
+cat kube-proxy.service
+```
+
+```
 fleetctl start kube-proxy.service
 ```
 
 ### Kubernetes API Service
+
+```
+cat kube-apiserver.service
+```
 
 ```
 fleetctl start kube-apiserver.service
@@ -58,10 +63,18 @@ fleetctl start kube-apiserver.service
 ### Controller Manager
 
 ```
+cat kube-controller-manager.service
+```
+
+```
 fleetctl start kube-controller-manager.service
 ```
 
 ### Kubernetes Scheduler
+
+```
+cat kube-scheduler.service
+```
 
 ```
 fleetctl start kube-scheduler.service
@@ -88,7 +101,7 @@ gcloud compute instances list
 ```
 
 ```
-ssh -f -nNT -L 8080:127.0.0.1:8080 core@${KUBE-APISERVER_EXTERNAL_IP}
+ssh -f -nNT -L 8080:127.0.0.1:8080 core@${KUBE_APISERVER_EXTERNAL_IP}
 ```
 
 ```
