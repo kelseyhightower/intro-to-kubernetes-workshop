@@ -1,0 +1,25 @@
+{
+  "id": "helloController",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 4,
+    "replicaSelector": {"name": "hello-replica"},
+    "podTemplate": {
+      "desiredState": {
+         "manifest": {
+           "version": "v1beta1",
+           "id": "helloController",
+           "containers": [{
+             "name": "hello",
+             "image": "quay.io/kelseyhightower/hello",
+             "cpu": 100,
+             "memory": 10000000,
+             "ports": [{"containerPort": 5000, "hostPort": 8000}]
+           }]
+         }
+       },
+       "labels": {"name": "hello-replica"}
+      }},
+  "labels": {"name": "hello"}
+}

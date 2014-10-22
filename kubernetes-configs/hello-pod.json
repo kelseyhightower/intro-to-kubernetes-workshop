@@ -9,7 +9,7 @@
       "containers": [{
         "name": "hello",
         "image": "quay.io/kelseyhightower/hello",
-        "ports": [{ "name": "hello", "containerPort": 5000 }]
+        "ports": [{ "name": "hello", "containerPort": 5000, "hostPort": 80 }]
       }]
     }
   },

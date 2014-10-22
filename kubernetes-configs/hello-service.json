@@ -1,0 +1,10 @@
+{
+  "id": "hello",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "port": 80,
+  "containerPort": 5000,
+  "selector": {
+    "name": "hello"
+  }
+}
