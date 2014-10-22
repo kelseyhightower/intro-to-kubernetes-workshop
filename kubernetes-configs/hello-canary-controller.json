@@ -1,0 +1,38 @@
+{
+  "id": "helloCanaryController",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 1,
+    "replicaSelector": {
+      "name": "hello",
+      "environment": "prod",
+      "track": "canary"
+    },
+    "podTemplate": {
+      "desiredState": {
+         "manifest": {
+           "version": "v1beta1",
+           "id": "helloCanaryController",
+           "containers": [{
+             "name": "hello",
+             "image": "quay.io/kelseyhightower/hello:2.0.0",
+             "cpu": 100,
+             "memory": 10000000,
+             "ports": [{"containerPort": 80}]
+           }]
+         }
+       },
+       "labels": {
+         "name": "hello",
+         "environment": "prod",
+         "track": "canary"
+       }
+    }
+  },
+  "labels": {
+    "name": "hello",
+    "environment": "prod",
+    "track": "canary"
+  }
+}
