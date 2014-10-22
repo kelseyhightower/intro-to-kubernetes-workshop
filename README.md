@@ -47,8 +47,7 @@
 
   * [Creating and managing pods](labs/pods.md)
   * [Creating and managing replication controllers](labs/replication-controllers.md)
-  * Creating and managing services
-  * Rolling upgrades
+  * [Creating and managing services](labs/services.md)
   * Running the Kubernetes examples
 
 ## Links
