@@ -4,6 +4,7 @@
 * Provide HA for Kubernetes components
 * Use fleet global units to simplify deployment
 * Use fleet metadata to co-locate Kubernetes master components
+* Setup Kubernetes API SSH Tunnel
 
 ## Workspace
 
