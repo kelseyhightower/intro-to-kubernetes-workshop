@@ -25,5 +25,5 @@ kubecfg -c hello-pod.json create pods
 ## Deleting Pods
 
 ```
-kubecfg delete pods/hello-pod
+kubecfg delete pods/hello
 ```
