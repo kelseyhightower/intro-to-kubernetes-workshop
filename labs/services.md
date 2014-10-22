@@ -1,5 +1,8 @@
 # Creating and managing services
 
+* Create a service using the kubecfg cli tool
+* Map a service to pod lables
+
 ## Workspace
 
 ```
