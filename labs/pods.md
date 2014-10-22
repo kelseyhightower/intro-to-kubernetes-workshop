@@ -35,6 +35,10 @@ gcloud compute firewall-rules create default-allow-hello --allow tcp:80
 kubecfg get pods/hello
 ```
 
+```
+kubecfg -json get pods/hello
+```
+
 ## Deleting Pods
 
 ```
