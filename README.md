@@ -48,6 +48,7 @@
   * Creating and managing pods
   * Creating and managing replication controllers
   * Creating and managing services
+  * Rolling upgrades
   * Running the Kubernetes examples
 
 ## Links
