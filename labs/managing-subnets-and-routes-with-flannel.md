@@ -60,7 +60,7 @@ fleetctl journal -f flannel-route-manager.service
 etcdctl --no-sync ls / --recursive
 ```
 
-### Ping between the hosts
+### Communicate between two containers
 
 Open two terminals 
 
