@@ -80,7 +80,7 @@ fleetctl list-units
 #### Setup SSH Tunnel
 
 ```
-fleetctl list-machines
+fleetctl list-units
 ```
 
 ```
