@@ -133,6 +133,8 @@ fleetctl list-machines
 
 ## Delete all the nodes
 
+Only do this if you need to start over or clean up after you are done.
+
 ```
 gcloud compute instances delete knode1 knode2 knode3 knode4 knode5 kcontrol \
 --zone us-central1-a --delete-disks all
