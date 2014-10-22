@@ -15,11 +15,11 @@ kubecfg list services
 ## Creating Services
 
 ```
-cat hello-stable-service.json
+cat hello-service.json
 ```
 
 ```
-kubecfg -c hello-stable-service.json create services
+kubecfg -c hello-service.json create services
 ```
 
 ```

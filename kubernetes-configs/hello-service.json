@@ -1,11 +1,11 @@
 {
-  "id": "hello",
+  "id": "hello-stable",
   "kind": "Service",
   "apiVersion": "v1beta1",
-  "port": 5000,
+  "port": 80,
   "containerPort": 80,
   "selector": {
-    "name": "hello-pod",
-    "environment": "testing"
+    "name": "hello",
+    "environment": "prod"
   }
 }
