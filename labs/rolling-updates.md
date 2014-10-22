@@ -1,5 +1,9 @@
 # Rolling Updates
 
+* Use multiple replication controllers with a single service
+* Deploy a canary application for testing
+* Zero downtime rolling update to a new Docker image
+
 ## Send the Canary
 
 ```
