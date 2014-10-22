@@ -22,6 +22,10 @@ cat hello-pod.json
 kubecfg -c hello-pod.json create pods
 ```
 
+```
+gcloud compute firewall-rules create default-allow-hello --allow tcp:80
+```
+
 ## Deleting Pods
 
 ```
