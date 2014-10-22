@@ -22,5 +22,9 @@ fleetctl start kube-register.service
 ## Validation
 
 ```
+fleetctl list-units
+```
+
+```
 kubecfg list minions
 ```
