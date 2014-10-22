@@ -16,7 +16,7 @@ cd intro-to-kubernetes-workshop/units
 
 ## Environment
 
-### fleet tunnel
+### fleet tunnel configuration
 
 ```
 export FLEETCTL_TUNNEL="${KCONTROL_EXTERNAL_IP}"
