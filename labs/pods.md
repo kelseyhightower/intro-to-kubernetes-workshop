@@ -1,5 +1,8 @@
 # Creating and managing pods
 
+* Deploy a pod with the kubecfg cli tool
+* Manage the basic life cycle of a pod
+
 ## Workspace
 
 ```
@@ -24,6 +27,12 @@ kubecfg -c hello-pod.json create pods
 
 ```
 gcloud compute firewall-rules create default-allow-hello --allow tcp:80
+```
+
+## Get Pod info
+
+```
+kubecfg get pods/hello
 ```
 
 ## Deleting Pods
