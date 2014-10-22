@@ -8,6 +8,8 @@ cd intro-to-kubernetes-workshop/units
 
 ## Environment
 
+### fleet tunnel configuration
+
 ```
 export FLEETCTL_TUNNEL="${KCONTROL_EXTERNAL_IP}"
 ```
@@ -90,7 +92,7 @@ fleetctl list-units
 
 ### kubecfg 
 
-#### Setup SSH Tunnel
+#### Setup Kubernetes API SSH Tunnel
 
 ```
 fleetctl list-units
