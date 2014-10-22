@@ -61,3 +61,27 @@ etcdctl --no-sync ls / --recursive
 ```
 
 ### Ping between the hosts
+
+Open two terminals 
+
+#### Terminal 1
+
+```
+gcloud compute ssh core@knode1
+```
+
+```
+docker run -t -i busybox /bin/sh -c 'ifconfig eth0 && nc -l -p 80'
+```
+
+#### Terminal 2
+
+```
+gcloud compute ssh core@knode3
+```
+
+Replace eth0-ip with the ip address from above.
+
+```
+docker run -t -i busybox /bin/sh -c 'nc ${eth0-ip}:80'
+```
