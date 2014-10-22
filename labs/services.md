@@ -15,11 +15,15 @@ kubecfg list services
 ## Creating Services
 
 ```
-cat hello-service.json
+cat hello-stable-service.json
 ```
 
 ```
-kubecfg -c hello-service.json create services
+kubecfg -c hello-stable-service.json create services
+```
+
+```
+gcloud compute instances list
 ```
 
 ## Deleting Services
