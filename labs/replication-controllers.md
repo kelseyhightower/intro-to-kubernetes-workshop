@@ -1,5 +1,8 @@
 # Creating and managing replication controllers
 
+* Create a replication controller using the kubecfg cli tool
+* Horizontally scale pods using a replication controller
+
 ## Workspace
 
 ```
