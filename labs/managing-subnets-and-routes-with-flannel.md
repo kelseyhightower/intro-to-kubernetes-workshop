@@ -1,9 +1,18 @@
 # Managing Subnets and Routes with Flannel
 
+* Sync the flannel route table from etcd to GCE
+* Enable cross container communication
+
 ## Workspace
 
 ```
 cd intro-to-kubernetes-workshop/units
+```
+
+## Environment
+
+```
+export FLEETCTL_TUNNEL="${KCONTROL_EXTERNAL_IP}"
 ```
 
 ## View the current subnet allocation
@@ -16,16 +25,9 @@ etcdctl --no-sync ls /coreos.com/network --recursive
 
 ## Install the flannel-route-manager
 
-```
-export FLEETCTL_TUNNEL="${KCONTROL_EXTERNAL_IP}"
-```
 
 ```
-fleetctl list-machines
-```
-
-```
-fleetctl list-units
+cat flannel-route-manager.service
 ```
 
 ```
