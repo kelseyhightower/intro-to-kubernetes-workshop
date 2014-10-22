@@ -36,6 +36,14 @@ fleetctl start flannel-route-manager.service
 
 ## Validation
 
+```
+fleet list-units
+```
+
+```
+fleetctl journal -f flannel-route-manager.service
+```
+
 ### View networks on the GCE control panel
 
 ### View the subnet allocations in etcd
