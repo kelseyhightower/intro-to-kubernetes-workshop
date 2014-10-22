@@ -11,8 +11,16 @@ cd intro-to-kubernetes-workshop/units
 
 ## Environment
 
+### fleet tunnel configuration
+
 ```
 export FLEETCTL_TUNNEL="${KCONTROL_EXTERNAL_IP}"
+```
+
+### etcd ssh tunnel
+
+```
+ssh -f -nNT -L 4001:127.0.0.1:4001 core@${KCONTROL_EXTERNAL_IP}
 ```
 
 ## View the current subnet allocation
