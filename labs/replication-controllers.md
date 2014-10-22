@@ -30,7 +30,7 @@ kubecfg list replicationControllers
 kubecfg list pods
 ```
 
-## Update a replicationController
+## Horizontally scaling pods
 
 Edit: hello-stable-controller.json
 
