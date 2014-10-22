@@ -1,0 +1,20 @@
+{
+  "apiVersion": "v1beta1",
+  "kind": "Pod",
+  "id": "hello-pod",
+  "desiredState": {
+    "manifest": {
+      "version": "v1beta1",
+      "id": "hello-pod",
+      "containers": [{
+        "name": "hello",
+        "image": "quay.io/kelseyhightower/hello",
+        "ports": [{ "name": "hello", "containerPort": 5000 }]
+      }]
+    }
+  },
+  "labels": {
+    "name": "hello",
+    "environment": "production"
+  }
+}

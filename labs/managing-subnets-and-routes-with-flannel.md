@@ -39,7 +39,7 @@ fleetctl start flannel-route-manager.service
 ### View the subnet allocations in etcd
 
 ```
-etcdctl ls / --recursive
+etcdctl --no-sync ls / --recursive
 ```
 
 ### Ping between the hosts
