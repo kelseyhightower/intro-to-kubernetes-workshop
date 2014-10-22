@@ -1,5 +1,9 @@
 # Provisionnig CoreOS, etcd, fleet, and flannel on Google Compute Engine
 
+* Provision a control node on GCE
+* Configure client SSL tunnels for remote access to etcd and fleet
+* Provision 5 Kubernetes nodes on GCE
+
 ## Workspace
 
 ```
