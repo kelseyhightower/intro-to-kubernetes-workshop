@@ -6,7 +6,6 @@
   "containerPort": 80,
   "selector": {
     "name": "hello",
-    "environment": "prod",
-    "track": "stable"
+    "environment": "prod"
   }
 }
