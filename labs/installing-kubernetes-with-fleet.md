@@ -19,7 +19,7 @@ gcloud compute instances list
 ```
 
 ```
-sed -i -e 's/CONTROL-NODE-INTERNAL-IP/${KCONTROL_INTERNAL_IP}/g' *
+sed -i "" -e 's/CONTROL-NODE-INTERNAL-IP/${KCONTROL_INTERNAL_IP}/g' *
 ```
 
 ## Deploying services
