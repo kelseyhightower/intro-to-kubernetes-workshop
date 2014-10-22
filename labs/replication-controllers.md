@@ -15,39 +15,48 @@ kubecfg list replicationControllers
 ## Creating a replicationController
 
 ```
-cat hello-controller.json
+cat hello-stable-controller.json
 ```
 
 ```
-kubecfg -c hello-controller.json create replicationControllers
+kubecfg -c hello-stable-controller.json create replicationControllers
+```
+
+```
+kubecfg list replicationControllers
+kubecfg list pods
 ```
 
 ## Update a replicationController
 
-Edit: hello-controller.json
+Edit: hello-stable-controller.json
 
 ```
 "replicas": 4
 ```
 
 ```
-kubecfg -c hello-controller.json update replicationControllers/hello
+kubecfg -c hello-stable-controller.json update replicationControllers/helloStableController
+```
+
+```
+kubecfg list pods
 ```
 
 ## Deleting a replicationController and pods
 
 ### Update the replicationController
 
-Edit: hello-controller.json
+Edit: hello-stable-controller.json
 
 ```
 "replicas": 0
 ```
 
 ```
-kubecfg -c hello-controller.json update replicationControllers/hello
+kubecfg -c hello-stable-controller.json update replicationControllers/helloStableController
 ```
 
 ```
-kubecfg delete replicationControllers/hello
+kubecfg delete replicationControllers/helloStableController
 ```
