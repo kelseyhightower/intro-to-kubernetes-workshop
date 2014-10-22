@@ -45,7 +45,7 @@
 
 #### Labs
 
-  * Creating and managing pods
+  * [Creating and managing pods](labs/pods.md)
   * Creating and managing replication controllers
   * Creating and managing services
   * Rolling upgrades
