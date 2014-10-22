@@ -16,8 +16,15 @@ cd intro-to-kubernetes-workshop/units
 
 ## Environment
 
+### fleet tunnel
+
 ```
 export FLEETCTL_TUNNEL="${KCONTROL_EXTERNAL_IP}"
+```
+
+### Kubernetes API SSH tunnel
+
+```
 ssh -f -nNT -L 8080:127.0.0.1:8080 core@${KUBE_APISERVER_EXTERNAL_IP}
 ```
 
