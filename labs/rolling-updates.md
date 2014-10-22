@@ -21,5 +21,13 @@ kubecfg list pods
 ## Rolling Update
 
 ```
+kubecfg get replicationControllers/helloStableController
+```
+
+```
+kubecfg list pods
+```
+
+```
 kubecfg --image "quay.io/kelseyhightower/hello:2.0.0" rollingupdate helloStableController
 ```
