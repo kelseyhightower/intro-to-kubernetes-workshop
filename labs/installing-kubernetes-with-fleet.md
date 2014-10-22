@@ -1,5 +1,10 @@
 # Installing Kubernetes with fleet
 
+* Deploy Kubernetes service units with fleet
+* Provide HA for Kubernetes components
+* Use fleet global units to simplify deployment
+* Use fleet metadata to co-locate Kubernetes master components
+
 ## Workspace
 
 ```
@@ -25,8 +30,6 @@ sed -i "" -e 's/CONTROL-NODE-INTERNAL-IP/${KCONTROL_INTERNAL_IP}/g' *
 ```
 
 ## Deploying services
-
-Review running units
 
 ```
 fleetctl list-units
