@@ -28,7 +28,7 @@ export FLEETCTL_TUNNEL="${KCONTROL_EXTERNAL_IP}"
 ssh -f -nNT -L 8080:127.0.0.1:8080 core@${KUBE_APISERVER_EXTERNAL_IP}
 ```
 
-## Install Kube Register with fleet
+## Install kube-register with fleet
 
 ```
 cat kube-register.service
