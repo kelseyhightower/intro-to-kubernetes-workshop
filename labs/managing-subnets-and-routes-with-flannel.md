@@ -45,7 +45,7 @@ fleetctl start flannel-route-manager.service
 ## Validation
 
 ```
-fleet list-units
+fleetctl list-units
 ```
 
 ```
@@ -62,7 +62,7 @@ etcdctl --no-sync ls / --recursive
 
 ### Communicate between two containers
 
-Open two terminals 
+Open two terminals
 
 #### Terminal 1
 

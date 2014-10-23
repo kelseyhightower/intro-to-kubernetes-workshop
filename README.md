@@ -25,7 +25,7 @@
 
 #### Labs
   * [Install the client tools](labs/install-the-client-tools.md)
-  * [Provisionning CoreOS, etcd, fleet, and flannel on Google Compute Engine](labs/provisioning-coreos-on-gce.md)
+  * [Provisioning CoreOS, etcd, fleet, and flannel on Google Compute Engine](labs/provisioning-coreos-on-gce.md)
   * [Managing subnets and routes with flannel](labs/managing-subnets-and-routes-with-flannel.md)
 
 ### Kubernetes Core Components
