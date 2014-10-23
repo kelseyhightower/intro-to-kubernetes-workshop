@@ -14,9 +14,19 @@ cat hello-canary-controller.json
 kubecfg -c hello-canary-controller.json create replicationControllers
 ```
 
+### Validation
+
 ```
 kubecfg list pods
 ```
+
+Try hitting the service port on any of the knode instances.
+
+```
+gcloud compute instances list
+```
+
+Did you find the canary?
 
 ## Rolling Update
 
