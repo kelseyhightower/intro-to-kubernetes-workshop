@@ -42,7 +42,7 @@ kubecfg get replicationControllers/helloStableController
 kubecfg list pods
 ```
 
-Open two terminals
+Open three terminals
 
 ### Terminal 1
 
@@ -54,4 +54,10 @@ kubecfg --image "quay.io/kelseyhightower/hello:2.0.0" rollingupdate helloStableC
 
 ```
 while true; do curl http://${EXTERNAL_IP}; echo; sleep 2; done
+```
+
+### Terminal 3
+
+```
+kubecfg list pods
 ```
