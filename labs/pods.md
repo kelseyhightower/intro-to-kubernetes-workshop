@@ -59,7 +59,9 @@ kubecfg -template_file pod.tmpl get pods/hello
 gcloud compute instances list | grep $HOST_IP_ADDRESS
 ```
 
-## Deleting Pods
+## Delete the hello pod
+
+No really delete this pod now!
 
 ```
 kubecfg delete pods/hello
