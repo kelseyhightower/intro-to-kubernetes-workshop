@@ -42,7 +42,11 @@ fleetctl list-units
 fleetctl journal -f flannel-route-manager.service
 ```
 
-### View networks on the GCE control panel
+### View the GCE routes
+
+```
+gcloud compute routes list
+```
 
 ### View the subnet allocations in etcd
 
