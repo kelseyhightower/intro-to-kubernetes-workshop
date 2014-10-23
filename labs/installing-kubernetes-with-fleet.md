@@ -107,7 +107,7 @@ gcloud compute instances list
 ```
 
 ```
-ssh -f -nNT -L 8080:127.0.0.1:8080 core@${KUBE_APISERVER_EXTERNAL_IP}
+gcloud compute ssh kcontrol --ssh-flag="-L 8080:localhost:8080" --ssh-flag="-fN" --zone us-central1-a
 ```
 
 ```
