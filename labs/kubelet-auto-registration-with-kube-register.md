@@ -14,12 +14,6 @@ metadata=role=knode
 cd intro-to-kubernetes-workshop/units
 ```
 
-### Kubernetes API SSH tunnel
-
-```
-ssh -i ~/.ssh/google_compute_engine -f -nNT -L 8080:127.0.0.1:8080 core@${KUBE_APISERVER_EXTERNAL_IP}
-```
-
 ## Install kube-register with fleet
 
 ```
