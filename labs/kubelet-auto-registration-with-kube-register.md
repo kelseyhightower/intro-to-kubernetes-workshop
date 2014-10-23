@@ -14,14 +14,6 @@ metadata=role=knode
 cd intro-to-kubernetes-workshop/units
 ```
 
-## Environment
-
-### fleet tunnel configuration
-
-```
-export FLEETCTL_TUNNEL="${KCONTROL_EXTERNAL_IP}"
-```
-
 ### Kubernetes API SSH tunnel
 
 ```
