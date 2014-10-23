@@ -35,6 +35,8 @@ gcloud compute instances list
 
 ## Deleting Services
 
+Only do this if you need to start over or clean up after you are done.
+
 ```
 kubecfg delete services/hello
 ```
