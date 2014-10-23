@@ -35,8 +35,28 @@ gcloud compute firewall-rules create default-allow-hello --allow tcp:80
 kubecfg get pods/hello
 ```
 
+### More details with the -json flag
+
 ```
 kubecfg -json get pods/hello
+```
+
+### Format output with a template
+
+```
+kubecfg -template_file pod.tmpl get pods/hello
+```
+
+## Visit the running service
+
+Grab the `HOST` IP address for the pod
+
+```
+kubecfg -template_file pod.tmpl get pods/hello
+```
+
+```
+gcloud compute instances list | grep $HOST_IP_ADDRESS
 ```
 
 ## Deleting Pods
