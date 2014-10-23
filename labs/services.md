@@ -29,6 +29,10 @@ kubecfg -c hello-service.json create services
 gcloud compute firewall-rules create default-allow-hello --allow tcp:80
 ```
 
+## Validation
+
+Try hitting the external IP address for each instance in your web browser.
+
 ```
 gcloud compute instances list
 ```
