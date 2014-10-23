@@ -15,7 +15,11 @@ cd intro-to-kubernetes-workshop/units
 etcdctl --no-sync ls /coreos.com/network --recursive
 ```
 
-### Explore GCE network using the GCE control panel
+## View the GCE routes
+
+```
+gcloud compute routes list
+```
 
 ## Install the flannel-route-manager
 
