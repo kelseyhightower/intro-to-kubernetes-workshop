@@ -93,7 +93,7 @@ Edit the knode.yaml and update the following lines:
 #### Update knode.yaml with sed
 
 ```
-sed -i -e 's/CONTROL-NODE-INTERNAL-IP/${KCONTROL_INTERNAL_IP}/g' knode.yaml
+sed -i "" -e 's/CONTROL-NODE-INTERNAL-IP/${KCONTROL_INTERNAL_IP}/g' knode.yaml
 ```
 
 ### Start knodes with gcloud
