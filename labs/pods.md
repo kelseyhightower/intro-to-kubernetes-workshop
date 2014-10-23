@@ -61,7 +61,7 @@ gcloud compute instances list | grep $HOST_IP_ADDRESS
 
 ## Delete the hello pod
 
-No really delete this pod now!
+Yes. Delete the hello pod right now!
 
 ```
 kubecfg delete pods/hello
