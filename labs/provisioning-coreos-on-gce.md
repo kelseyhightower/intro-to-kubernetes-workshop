@@ -41,7 +41,7 @@ gcloud compute instances list
 ### etcd
 
 ```
-gcloud compute ssh kcontrol --ssh-flag="-L 4001:localhost:4001" --ssh-flag="-fN" --zone us-central1-a
+gcloud compute ssh core@kcontrol --ssh-flag="-L 4001:localhost:4001" --ssh-flag="-fN" --zone us-central1-a
 ```
 
 ### fleet
