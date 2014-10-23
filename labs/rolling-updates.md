@@ -26,6 +26,10 @@ Try hitting the service port on any of the knode instances.
 gcloud compute instances list
 ```
 
+```
+while true; do curl http://${EXTERNAL_IP}; echo; sleep 2; done
+```
+
 Did you find the canary?
 
 ## Rolling Update
