@@ -42,6 +42,16 @@ kubecfg get replicationControllers/helloStableController
 kubecfg list pods
 ```
 
+Open two terminals
+
+### Terminal 1
+
 ```
 kubecfg --image "quay.io/kelseyhightower/hello:2.0.0" rollingupdate helloStableController
+```
+
+### Terminal 2
+
+```
+while true; do curl http://${EXTERNAL_IP}; echo; sleep 2; done
 ```
