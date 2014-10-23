@@ -1,4 +1,4 @@
-# Provisionnig CoreOS, etcd, fleet, and flannel on Google Compute Engine
+# Provisioning CoreOS, etcd, fleet, and flannel on Google Compute Engine
 
 * Provision a control node on GCE
 * Configure client SSL tunnels for remote access to etcd and fleet
@@ -130,6 +130,16 @@ etcdctl --no-sync ls / -recursive
 ```
 fleetctl list-machines
 ```
+
+Note: if you see an 'unable to authenticate' error when you run `fleetctl`, then try first running:
+
+```
+ssh-add ~/.ssh/google_compute_engine
+```
+
+(Substitute the filename of your ssh keys as necessary).
+These keys are [generated](https://cloud.google.com/compute/docs/console#sshkeys) the first time you run `gcloud compute ssh`.
+
 
 ## Delete all the nodes
 
