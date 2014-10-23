@@ -41,7 +41,7 @@ gcloud compute instances list
 ### etcd
 
 ```
-ssh -f -nNT -L 4001:127.0.0.1:4001 core@${KCONTROL_EXTERNAL_IP}
+gcloud compute ssh kcontrol --ssh-flag="-L 8080:localhost:8080" --ssh-flag="-fN" --zone us-central1-a
 ```
 
 ### fleet
