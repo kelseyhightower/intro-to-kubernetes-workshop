@@ -40,6 +40,7 @@ Edit: hello-stable-controller.json
 "replicas": 4
 ```
 
+### Update the replication controller
 ```
 kubecfg -c hello-stable-controller.json update replicationControllers/helloStableController
 ```
