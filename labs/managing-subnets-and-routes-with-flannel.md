@@ -20,7 +20,7 @@ export FLEETCTL_TUNNEL="${KCONTROL_EXTERNAL_IP}"
 ### etcd ssh tunnel
 
 ```
-gcloud compute ssh kcontrol --ssh-flag="-L 4001:localhost:4001" --ssh-flag="-fN" --zone us-central1-a
+ssh -i ~/.ssh/google_compute_engine -f -nNT -L 4001:127.0.0.1:4001 core@${KCONTROL_EXTERNAL_IP}
 ```
 
 ## View the current subnet allocation
