@@ -2,8 +2,7 @@
   "kind": "ReplicationController",
   "apiVersion": "v1beta3",
   "metadata": {
-    "name": "helloStableController",
-    "creationTimestamp": null,
+    "name": "hello-stable-controller",
     "labels": {
       "environment": "prod",
       "name": "hello",
@@ -19,7 +18,6 @@
     },
     "template": {
       "metadata": {
-        "creationTimestamp": null,
         "labels": {
           "environment": "prod",
           "name": "hello",
@@ -27,7 +25,6 @@
         }
       },
       "spec": {
-        "volumes": null,
         "containers": [
           {
             "name": "hello",
@@ -45,16 +42,12 @@
               }
             },
             "terminationMessagePath": "/dev/termination-log",
-            "imagePullPolicy": "IfNotPresent",
-            "capabilities": {}
+            "imagePullPolicy": "IfNotPresent"
           }
         ],
         "restartPolicy": "Always",
         "dnsPolicy": "ClusterFirst"
       }
     }
-  },
-  "status": {
-    "replicas": 0
   }
 }

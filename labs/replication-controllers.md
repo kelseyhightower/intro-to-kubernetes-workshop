@@ -14,7 +14,7 @@ cd intro-to-kubernetes-workshop/kubernetes-configs
 ## Listing Replication Controllers
 
 ```
-kubecfg list replicationControllers
+kubectl get replicationControllers
 ```
 
 ## Creating a replicationController
@@ -24,47 +24,36 @@ cat hello-stable-controller.json
 ```
 
 ```
-kubecfg -c hello-stable-controller.json create replicationControllers
+kubectl create -f hello-stable-controller.json
 ```
 
 ```
-kubecfg list replicationControllers
-kubecfg list pods
+kubectl get replicationControllers
+kubectl get pods
 ```
 
 ## Horizontally scaling pods
 
-Edit: hello-stable-controller.json
+### Resize the replication controller
 
 ```
-"replicas": 4
-```
-
-### Update the replication controller
-```
-kubecfg -c hello-stable-controller.json update replicationControllers/helloStableController
+kubectl resize --replicas=3 rc hello-stable-controller 
 ```
 
 ```
-kubecfg list pods
+kubectl get pods
 ```
 
 ## Deleting a replicationController and pods
 
 Only do this if you need to start over or clean up.
 
-### Update the replicationController
-
-Edit: hello-stable-controller.json
-
 ```
-"replicas": 0
+kubecfg delete rc hello-stable-controller
 ```
 
-```
-kubecfg -c hello-stable-controller.json update replicationControllers/helloStableController
-```
+Delete all pods at the same time.
 
 ```
-kubecfg delete replicationControllers/helloStableController
+kubecfg delete rc hello-stable-controller --cascade
 ```
