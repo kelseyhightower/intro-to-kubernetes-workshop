@@ -12,51 +12,20 @@ gcloud config set project <your-project-name>
 Note: if you don't yet have a Google Cloud project created, then follow the signup
 instructions [here](https://cloud.google.com/compute/docs/signup).
 
-## Darwin
-
-### etcdctl
+## Packer
 
 ```
-wget http://storage.googleapis.com/k8s/darwin/etcdctl
+https://packer.io/docs/installation.html
 ```
 
-### fleetctl
+## Terraform
 
 ```
-wget http://storage.googleapis.com/k8s/darwin/fleetctl
+https://www.terraform.io/intro/getting-started/install.html
 ```
 
-### kubecfg
+## kubectl
 
 ```
-wget http://storage.googleapis.com/k8s/darwin/kubecfg
+https://github.com/GoogleCloudPlatform/kubernetes/releases/tag/v0.17.1
 ```
-
-## Linux
-
-### etcdctl
-
-```
-wget http://storage.googleapis.com/k8s/linux/etcdctl
-```
-
-### fleetctl
-
-```
-wget http://storage.googleapis.com/k8s/linux/fleetctl
-```
-
-### kubecfg
-
-```
-wget http://storage.googleapis.com/k8s/linux/kubecfg
-```
-
-## Add client tools to your path
-
-```
-chmod +x etcdctl fleetctl kubecfg
-mkdir -p /usr/local/bin/
-mv etcdctl fleetctl kubecfg /usr/local/bin/
-```
-
