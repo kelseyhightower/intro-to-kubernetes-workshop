@@ -35,16 +35,16 @@ gcloud compute firewall-rules create default-allow-hello --allow tcp:80
 kubectl get pods hello
 ```
 
-### More details with the -json flag
+### More details with the describe command
 
 ```
-kubectl -json get pods/hello
+kubectl describe pods hello
 ```
 
 ### Format output with a template
 
 ```
-kubectl -template_file pod.tmpl get pods/hello
+kubectl get pods -o templatefile --template=pod.tmpl
 ```
 
 ## Visit the running service
@@ -52,7 +52,7 @@ kubectl -template_file pod.tmpl get pods/hello
 Grab the `HOST` IP address for the pod
 
 ```
-kubectl -template_file pod.tmpl get pods/hello
+kubectl get pods hello
 ```
 
 ```
@@ -64,5 +64,5 @@ gcloud compute instances list | grep $HOST_IP_ADDRESS
 Yes. Delete the hello pod right now!
 
 ```
-kubectl delete pods/hello
+kubectl delete pods hello
 ```
