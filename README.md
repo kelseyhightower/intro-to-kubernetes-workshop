@@ -1,5 +1,7 @@
 # Intro to Kubernetes Workshop
 
+Kubernetes Version: 0.17.1
+
 ## Course Outline
 
 ### Kubernetes Core Concepts
