@@ -32,7 +32,7 @@ Edit `kubernetes-configs/node-template.json`
 Copy the node template:
 
 ```
-cp kubernetes-configs/node-template.json kubernetes-configs/${cluster_name}-kube0.json
+cp kubernetes-configs/node-template.json kubernetes-configs/testing-kube0.c.kubestack.internal.json
 ```
 
 ```
@@ -50,4 +50,10 @@ cp kubernetes-configs/node-template.json kubernetes-configs/${cluster_name}-kube
     "externalID": "testing-kube0.c.kubestack.internal"
   }
 }
+```
+
+Register the node using kubectl
+
+```
+kubectl create -f kubernetes-configs/testing-kube0.c.kubestack.internal.json
 ```
