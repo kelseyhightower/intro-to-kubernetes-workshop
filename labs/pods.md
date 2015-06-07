@@ -26,7 +26,7 @@ kubectl create -f hello-pod.json
 ```
 
 ```
-gcloud compute firewall-rules create default-allow-hello --allow tcp:80
+gcloud compute firewall-rules create default-allow-hello --allow tcp:80 --project kubestack
 ```
 
 ## Get Pod info
@@ -56,7 +56,7 @@ kubectl get pods hello
 ```
 
 ```
-gcloud compute instances list | grep $HOST_IP_ADDRESS
+gcloud compute instances list --project kubestack
 ```
 
 ## Delete the hello pod
