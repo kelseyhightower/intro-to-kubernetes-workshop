@@ -12,7 +12,7 @@ cd intro-to-kubernetes-workshop/kubernetes-configs
 ## Listing Pods
 
 ```
-kubectl list pods
+kubectl get pods
 ```
 
 ## Creating Pods
@@ -22,7 +22,7 @@ cat hello-pod.json
 ```
 
 ```
-kubectl -c hello-pod.json create pods
+kubectl create -f hello-pod.json
 ```
 
 ```
@@ -32,7 +32,7 @@ gcloud compute firewall-rules create default-allow-hello --allow tcp:80
 ## Get Pod info
 
 ```
-kubectl get pods/hello
+kubectl get pods hello
 ```
 
 ### More details with the -json flag
