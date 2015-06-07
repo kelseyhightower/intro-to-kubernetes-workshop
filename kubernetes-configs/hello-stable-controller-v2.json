@@ -2,26 +2,21 @@
   "kind": "ReplicationController",
   "apiVersion": "v1beta3",
   "metadata": {
-    "name": "hello-canary-controller",
-    "labels": {
-      "environment": "prod",
-      "name": "hello",
-      "track": "canary"
-    }
+    "name": "hello-stable-controller-v2"
   },
   "spec": {
-    "replicas": 1,
+    "replicas": 3,
     "selector": {
       "environment": "prod",
-      "name": "hello",
-      "track": "canary"
+      "name": "hello-v2",
+      "track": "stable"
     },
     "template": {
       "metadata": {
         "labels": {
           "environment": "prod",
-          "name": "hello",
-          "track": "canary"
+          "name": "hello-v2",
+          "track": "stable"
         }
       },
       "spec": {

@@ -11,19 +11,19 @@ cat hello-canary-controller.json
 ```
 
 ```
-kubecfg -c hello-canary-controller.json create replicationControllers
+kubectl create -f hello-canary-controller.json
 ```
 
 ### Validation
 
 ```
-kubecfg list pods
+kubectl get pods
 ```
 
 Try hitting the service port on any of the knode instances.
 
 ```
-gcloud compute instances list
+gcloud compute instances list --project kubestack
 ```
 
 ```
@@ -34,20 +34,12 @@ Did you find the canary?
 
 ## Rolling Update
 
-```
-kubecfg get replicationControllers/helloStableController
-```
-
-```
-kubecfg list pods
-```
-
 Open three terminals
 
 ### Terminal 1
 
 ```
-kubecfg --image "quay.io/kelseyhightower/hello:2.0.0" rollingupdate helloStableController
+kubectl rolling-update --update-period=3s hello-stable-controller -f hello-stable-controller-v2.json
 ```
 
 ### Terminal 2
@@ -59,5 +51,5 @@ while true; do curl http://${EXTERNAL_IP}; echo; sleep 2; done
 ### Terminal 3
 
 ```
-kubecfg list pods
+kubectl get pods
 ```
