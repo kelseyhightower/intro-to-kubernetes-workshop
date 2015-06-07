@@ -8,7 +8,7 @@ Nodes represent the workers in a Kubernetes clusters and will run pods scheduled
 kubectl get nodes
 ```
 
-### Adding nodes a Kubernetes cluster
+### Adding nodes with kubectl
 
 Edit `kubernetes-configs/node-template.json`
 
