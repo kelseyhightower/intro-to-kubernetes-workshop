@@ -1,0 +1,14 @@
+{
+  "kind": "Node",
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "",
+    "labels": {
+      "environment": "",
+      "name": ""
+    }
+  },
+  "spec": {
+    "externalID": ""
+  }
+}
