@@ -14,14 +14,14 @@ cd kubestack
 
 ## Reviewing the Terraform Configs
 
-* kubestack.tf
-* variables.tf
-* terraform.tfvars
+* terraform/kubestack.tf
+* terraform/variables.tf
+* terraform/terraform.tfvars
 
 ## Reviewing the Kubernetes Configs
 
-* kubernetes.env
-* etcd.env
+* terraform/kubernetes.env
+* terraform/etcd.env
 
 ## Creating a Cluster with Terraform
 
