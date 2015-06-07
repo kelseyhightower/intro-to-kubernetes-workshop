@@ -13,20 +13,19 @@
   * CoreOS
   * Docker
   * etcd
-  * fleet
   * flannel
   * Kubernetes master
   * Kubernetes node
 
 ### Client tools
-  * fleetctl
+  * packer
+  * terraform
   * etcdctl
-  * kubecfg
+  * kubectl
 
 #### Labs
   * [Install the client tools](labs/install-the-client-tools.md)
-  * [Provisioning CoreOS, etcd, fleet, and flannel on Google Compute Engine](labs/provisioning-coreos-on-gce.md)
-  * [Managing subnets and routes with flannel](labs/managing-subnets-and-routes-with-flannel.md)
+  * [Creating Kubernetes Images with Packer](labs/creating-kubernetes-images-with-packer.md)
 
 ### Kubernetes Core Components
   * kubelet
@@ -36,15 +35,15 @@
   * replication controller
 
 #### Labs
-  * [Installing Kubernetes with fleet](labs/installing-kubernetes-with-fleet.md)
-  * [kubelet auto-registration with kube-register](labs/kubelet-auto-registration-with-kube-register.md)
+  * [Provisioning Kubernetes Clusters with Terraform](labs/provisioning-kubernetes-clusters-with-terraform.md)
 
 ### Managing Applications with Kubernetes
   * Kubernetes API
-  * kubecfg
+  * kubectl
 
 #### Labs
 
+  * [Creating and managing nodes](labs/nodes.md)
   * [Creating and managing pods](labs/pods.md)
   * [Creating and managing replication controllers](labs/replication-controllers.md)
   * [Creating and managing services](labs/services.md)
@@ -57,6 +56,7 @@
 * [gcloud Tool Guide](https://cloud.google.com/sdk/gcloud)
 * [Docker](https://docs.docker.com)
 * [CoreOS](https://coreos.com)
-* [fleet](https://coreos.com/docs/launching-containers/launching/launching-containers-fleet)
+* [Packer](https://packer.io)
+* [Terraform](https://www.terraform.io)
 * [flannel](https://github.com/coreos/flannel)
 * [etcd](https://coreos.com/docs/distributed-configuration/getting-started-with-etcd)
