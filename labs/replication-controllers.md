@@ -17,6 +17,12 @@ cd intro-to-kubernetes-workshop/kubernetes-configs
 kubectl get replicationControllers
 ```
 
+Use `rc` as a shorthand for `replicationControllers`
+
+```
+kubectl get rc
+```
+
 ## Creating a replicationController
 
 ```
@@ -28,7 +34,7 @@ kubectl create -f hello-stable-controller.json
 ```
 
 ```
-kubectl get replicationControllers
+kubectl get rc
 kubectl get pods
 ```
 
