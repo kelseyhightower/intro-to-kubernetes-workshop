@@ -14,18 +14,14 @@ instructions [here](https://cloud.google.com/compute/docs/signup).
 
 ## Packer
 
-```
-https://packer.io/docs/installation.html
-```
+[Packer install guide](https://packer.io/docs/installation.html)
+
 
 ## Terraform
 
-```
-https://www.terraform.io/intro/getting-started/install.html
-```
+[Terraform install guide](https://www.terraform.io/intro/getting-started/install.html)
+
 
 ## kubectl
 
-```
-https://github.com/GoogleCloudPlatform/kubernetes/releases/tag/v0.17.1
-```
+[Kubernetes install guide](https://github.com/GoogleCloudPlatform/kubernetes/releases/tag/v0.17.1)
