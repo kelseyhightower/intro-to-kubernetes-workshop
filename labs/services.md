@@ -12,7 +12,7 @@ cd intro-to-kubernetes-workshop/kubernetes-configs
 ## Listing Services
 
 ```
-kubecfg list services
+kubectl get services
 ```
 
 ## Creating Services
@@ -22,11 +22,11 @@ cat hello-service.json
 ```
 
 ```
-kubecfg -c hello-service.json create services
+kubectl create -f hello-service.json
 ```
 
 ```
-gcloud compute firewall-rules create default-allow-hello --allow tcp:80
+gcloud compute firewall-rules create default-allow-hello --allow tcp:80 --project kubestack
 ```
 
 ## Validation
@@ -42,5 +42,5 @@ gcloud compute instances list
 Only do this if you need to start over or clean up after you are done.
 
 ```
-kubecfg delete services/hello
+kubectl delete services hello
 ```

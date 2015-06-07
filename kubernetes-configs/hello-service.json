@@ -2,13 +2,13 @@
   "kind": "Service",
   "apiVersion": "v1beta3",
   "metadata": {
-    "name": "hello-stable",
-    "creationTimestamp": null
+    "name": "hello-stable"
   },
   "spec": {
+    "publicIPs": ["104.197.5.52"],
     "ports": [
       {
-        "name": "",
+        "name": "http",
         "protocol": "TCP",
         "port": 80,
         "targetPort": 80
@@ -18,8 +18,6 @@
       "environment": "prod",
       "name": "hello"
     },
-    "portalIP": "",
     "sessionAffinity": "None"
-  },
-  "status": {}
+  }
 }
