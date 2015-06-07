@@ -1,11 +1,25 @@
 {
-  "id": "hello-stable",
   "kind": "Service",
-  "apiVersion": "v1beta1",
-  "port": 80,
-  "containerPort": 80,
-  "selector": {
-    "name": "hello",
-    "environment": "prod"
-  }
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "hello-stable",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "ports": [
+      {
+        "name": "",
+        "protocol": "TCP",
+        "port": 80,
+        "targetPort": 80
+      }
+    ],
+    "selector": {
+      "environment": "prod",
+      "name": "hello"
+    },
+    "portalIP": "",
+    "sessionAffinity": "None"
+  },
+  "status": {}
 }

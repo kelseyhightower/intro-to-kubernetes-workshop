@@ -1,38 +1,60 @@
 {
-  "id": "helloStableController",
   "kind": "ReplicationController",
-  "apiVersion": "v1beta1",
-  "desiredState": {
-    "replicas": 1,
-    "replicaSelector": {
-      "name": "hello",
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "helloStableController",
+    "creationTimestamp": null,
+    "labels": {
       "environment": "prod",
+      "name": "hello",
       "track": "stable"
-    },
-    "podTemplate": {
-      "desiredState": {
-         "manifest": {
-           "version": "v1beta1",
-           "id": "helloStableController",
-           "containers": [{
-             "name": "hello",
-             "image": "quay.io/kelseyhightower/hello:1.0.0",
-             "cpu": 100,
-             "memory": 10000000,
-             "ports": [{"containerPort": 80}]
-           }]
-         }
-       },
-       "labels": {
-         "name": "hello",
-         "environment": "prod",
-         "track": "stable"
-       }
     }
   },
-  "labels": {
-    "name": "hello",
-    "environment": "prod",
-    "track": "stable"
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "environment": "prod",
+      "name": "hello",
+      "track": "stable"
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "environment": "prod",
+          "name": "hello",
+          "track": "stable"
+        }
+      },
+      "spec": {
+        "volumes": null,
+        "containers": [
+          {
+            "name": "hello",
+            "image": "quay.io/kelseyhightower/hello:1.0.0",
+            "ports": [
+              {
+                "containerPort": 80,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "10000000"
+              }
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent",
+            "capabilities": {}
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "ClusterFirst"
+      }
+    }
+  },
+  "status": {
+    "replicas": 0
   }
 }

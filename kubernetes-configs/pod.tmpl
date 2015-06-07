@@ -1,7 +1,7 @@
-Host: {{.CurrentState.Host}}
-PodIP: {{.CurrentState.PodIP}}
-
-Containers: {{range $container := .DesiredState.Manifest.Containers}}
-             Name: {{$container.Name}}{{range $port := $container.Ports}}
-         HostPort: {{$port.HostPort}}
-    ContainerPort: {{$port.ContainerPort}}{{end}}{{end}}
+{{range .items}}
+{{.metadata.name}}
+   PodIP: {{.status.podIP}}
+   Containers:
+      Name{{printf "\t\t"}}Image{{printf "\t\t"}}Running{{ range .status.containerStatuses}}
+      {{.name}}{{printf "\t\t"}}{{.image}}{{printf "\t"}}{{.ready}}{{end}}
+{{end}}
