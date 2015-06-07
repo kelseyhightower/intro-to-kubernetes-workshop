@@ -1,6 +1,6 @@
 # Creating and managing pods
 
-* Deploy a pod with the kubecfg cli tool
+* Deploy a pod with the kubectl cli tool
 * Manage the basic life cycle of a pod
 
 ## Workspace
@@ -12,7 +12,7 @@ cd intro-to-kubernetes-workshop/kubernetes-configs
 ## Listing Pods
 
 ```
-kubecfg list pods
+kubectl list pods
 ```
 
 ## Creating Pods
@@ -22,7 +22,7 @@ cat hello-pod.json
 ```
 
 ```
-kubecfg -c hello-pod.json create pods
+kubectl -c hello-pod.json create pods
 ```
 
 ```
@@ -32,19 +32,19 @@ gcloud compute firewall-rules create default-allow-hello --allow tcp:80
 ## Get Pod info
 
 ```
-kubecfg get pods/hello
+kubectl get pods/hello
 ```
 
 ### More details with the -json flag
 
 ```
-kubecfg -json get pods/hello
+kubectl -json get pods/hello
 ```
 
 ### Format output with a template
 
 ```
-kubecfg -template_file pod.tmpl get pods/hello
+kubectl -template_file pod.tmpl get pods/hello
 ```
 
 ## Visit the running service
@@ -52,7 +52,7 @@ kubecfg -template_file pod.tmpl get pods/hello
 Grab the `HOST` IP address for the pod
 
 ```
-kubecfg -template_file pod.tmpl get pods/hello
+kubectl -template_file pod.tmpl get pods/hello
 ```
 
 ```
@@ -64,5 +64,5 @@ gcloud compute instances list | grep $HOST_IP_ADDRESS
 Yes. Delete the hello pod right now!
 
 ```
-kubecfg delete pods/hello
+kubectl delete pods/hello
 ```
