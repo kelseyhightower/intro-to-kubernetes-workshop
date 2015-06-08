@@ -48,7 +48,7 @@ kubectl get nodes
 ### Viewing node details
 
 ```
-kubectl describe nodes testing-kube0.c.kubestack.internal
+kubectl describe nodes testing-kube0.c.${project-id}.internal
 ```
 
 ### Troubleshooting
