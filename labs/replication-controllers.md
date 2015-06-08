@@ -55,5 +55,5 @@ kubectl get pods
 Only do this if you need to start over or clean up.
 
 ```
-kubectl delete rc hello-stable-controller
+kubectl delete rc hello-stable-controller-v1
 ```
