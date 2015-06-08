@@ -1,0 +1,18 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1beta3",
+    "metadata": {
+        "name": "web"
+    },
+    "spec": {
+        "ports": [{
+            "protocol": "TCP",
+            "port": 80,
+            "targetPort": 80
+        }],
+        "selector": {
+            "name": "web",
+            "environment": "production"
+        }
+    }
+}

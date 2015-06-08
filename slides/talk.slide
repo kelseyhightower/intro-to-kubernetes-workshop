@@ -1,0 +1,156 @@
+Intro to Kubernetes Workshop
+QCon 2015 - New York
+
+Kelsey Hightower
+CoreOS
+kelsey.hightower@coreos.com
+@kelseyhightower
+
+* Course Outline
+
+* Course Outline
+
+Kubernetes Core Concepts
+
+- containers
+- pods
+- labels
+- services
+- Kuberbetes network model
+
+* Course Outline
+
+Kubernetes Infrastructure
+
+- CoreOS
+- Docker
+- etcd
+- flannel
+- Kubernetes controller
+- Kubernetes node
+- Terraform
+
+* Containers
+
+Unix processes not lightweight Virtual Machines
+
+- application + dependencies = image
+- Runtime environment (cgroups, namespaces, env vars)
+
+.image images/container.png
+
+* Containers
+
+Building container images.
+
+.code docker/large-dockerfile
+
+Total size: 500MB
+
+* Containers
+
+Building container images.
+
+- Build applications in a dedicated build container or CI
+- Ship build artifacts, not build environments
+
+Remix
+
+.code docker/small-dockerfile
+
+Total size: 4MB
+
+* Kubernetes
+
+Container management, scheduling, and service discovery.
+
+- API driven application management
+- Agents monitor endpoints for state changes (real-time)
+- Controllers enforce desired state
+- Labels identify resources (nodes, applications, services)
+
+* Kubernetes
+
+High level concepts
+
+- node
+- pod
+- scheduler
+- replication controller
+- service
+
+* Node
+
+Runs containers and proxies service requests.
+
+- docker
+- kubelet
+- proxy
+
+.image images/kubernetes-nodes-2.png
+
+* Node Manifest
+
+.code manifests/node.json
+
+* Pod
+
+Represents a logical application.
+
+- One or more containers
+- Shared namespaces
+
+.image images/pod.png
+
+* Pod Manifest
+
+.code manifests/pod.json
+
+* Scheduler
+
+Schedules pods to run on nodes.
+
+- Global scheduler for long running jobs
+- Best fit chosen based on pod requirements
+- Pluggable
+
+.image images/kubernetes-scheduler.png
+
+* Replication Controller
+
+Manages a replicated set of pods.
+
+- Creates pods from a template
+- Ensures desired number of pods are running
+- Online resizing 
+
+.image images/kubernetes-rc.png
+
+* Replication Controller
+
+Manages a replicated set of pods.
+
+- Creates pods from a template
+- Ensures desired number of pods are running
+- Self-healing 
+
+.image images/kubernetes-rc-reschedule.png
+
+* Replication Controller Manifest
+
+.code manifests/replication-controller.json
+
+* Service
+
+Service discovery for pods.
+
+- Proxy runs on each node
+- Virutal IP per service (avoid port collisions)
+- Basic round-robin algorithm
+- Dynamic backends based on label queries 
+
+* Service Manifest
+
+.code manifests/service.json
+
+* Time to get Hands On

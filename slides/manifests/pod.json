@@ -1,0 +1,23 @@
+{
+    "kind": "Pod",
+    "apiVersion": "v1beta3",
+    "metadata": {
+        "name": "web",
+        "labels": {
+            "environment": "production",
+            "name": "web"
+        }
+    },
+    "spec": {
+        "containers": [{
+            "name": "web",
+            "image": "quay.io/kelseyhightower/web:1.0.0",
+            "ports": [{"containerPort": 80, "protocol": "TCP"}]
+        },
+        {
+            "name": "memcached",
+            "image": "memcached",
+            "ports": [{"containerPort": 11211, "protocol": "TCP"}]
+        }]
+    }
+}

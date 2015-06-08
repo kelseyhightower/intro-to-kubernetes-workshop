@@ -1,0 +1,6 @@
+FROM       scratch
+
+MAINTAINER Kelsey Hightower <kelsey.hightower@gmail.com>
+ADD        pgview pgview 
+
+ENTRYPOINT ["/pgview"]

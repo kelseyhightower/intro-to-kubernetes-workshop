@@ -1,0 +1,23 @@
+{
+    "kind": "ReplicationController",
+    "apiVersion": "v1beta3",
+    "metadata": {
+        "name": "web"
+    },
+    "spec": {
+        "replicas": 1,
+        "selector": {
+            "name": "web",
+            "track": "stable"
+        },
+        "template": {
+            "metadata": {
+                "labels": {
+                    "name": "web",
+                    "track": "stable"
+                }
+            },
+            "spec": {"containers": [...]}
+        }
+    }
+}
