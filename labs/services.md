@@ -46,7 +46,7 @@ Why does it not work?
 ### Fix it
 
 ```
-kubectl delete services hello
+kubectl delete services hello-stable
 ```
 
 ```
@@ -61,10 +61,14 @@ Add the `INTERNAL_IP`s to the publicIPs list:
 "publicIPs": ["10.240.32.10", "10.240.98.37", "10.240.53.14"],
 ```
 
+```
+kubectl create -f hello-service.json
+```
+
 ## Deleting Services
 
 Only do this if you need to start over or clean up after you are done.
 
 ```
-kubectl delete services hello
+kubectl delete services hello-stable
 ```
