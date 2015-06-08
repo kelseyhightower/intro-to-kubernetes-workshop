@@ -41,6 +41,10 @@ Register the node using kubectl
 kubectl create -f kubernetes-configs/testing-kube0.c.kubestack.internal.json
 ```
 
+```
+kubectl get nodes
+```
+
 ### Viewing node details
 
 ```
