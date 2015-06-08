@@ -65,3 +65,33 @@ kubectl create -f kubernetes-configs/testing-kube0.c.kubestack.internal.json
 ```
 kubectl describe nodes testing-kube0.c.kubestack.internal
 ```
+
+### Troubleshooting
+
+If you need to troubleshoot a node, start with the kubelet.
+
+```
+gcloud compute instances list
+```
+
+```
+ssh core@${node-ip-address}
+```
+
+Review the logs:
+
+```
+sudo journalctl --no-pager -u kube-kubelet
+```
+
+Check the service status
+
+```
+sudo systemctl status kube-kubelet
+```
+
+If all else fails, trying restarting the kubelet service
+
+```
+sudo systemctl restart kube-kubelet
+```
