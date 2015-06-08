@@ -2,6 +2,8 @@
 
 Kubernetes Version: 0.17.1
 
+The slides from this workshop are hosted [online](http://go-talks.appspot.com/github.com/kelseyhightower/intro-to-kubernetes-workshop/slides/talk.slide#1)
+
 ## Course Outline
 
 ### Kubernetes Core Concepts
