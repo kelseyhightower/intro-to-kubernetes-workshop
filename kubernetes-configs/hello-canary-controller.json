@@ -2,18 +2,14 @@
   "kind": "ReplicationController",
   "apiVersion": "v1beta3",
   "metadata": {
-    "name": "hello-canary-controller",
-    "labels": {
-      "environment": "prod",
-      "name": "hello",
-      "track": "canary"
-    }
+    "name": "hello-canary-controller"
   },
   "spec": {
     "replicas": 1,
     "selector": {
       "environment": "prod",
       "name": "hello",
+      "app": "hello",
       "track": "canary"
     },
     "template": {
@@ -21,6 +17,7 @@
         "labels": {
           "environment": "prod",
           "name": "hello",
+          "app": "hello",
           "track": "canary"
         }
       },
@@ -35,12 +32,6 @@
                 "protocol": "TCP"
               }
             ],
-            "resources": {
-              "limits": {
-                "cpu": "100m",
-                "memory": "10000000"
-              }
-            },
             "terminationMessagePath": "/dev/termination-log",
             "imagePullPolicy": "IfNotPresent"
           }
