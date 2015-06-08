@@ -9,22 +9,18 @@
     }
   },
   "spec": {
-    "volumes": null,
     "containers": [
       {
         "name": "hello",
         "image": "quay.io/kelseyhightower/hello",
         "ports": [
           {
-            "hostPort": 80,
             "containerPort": 80,
             "protocol": "TCP"
           }
         ],
-        "resources": {},
         "terminationMessagePath": "/dev/termination-log",
-        "imagePullPolicy": "IfNotPresent",
-        "capabilities": {}
+        "imagePullPolicy": "IfNotPresent"
       }
     ],
     "restartPolicy": "Always",

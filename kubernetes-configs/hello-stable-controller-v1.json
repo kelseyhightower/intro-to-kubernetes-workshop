@@ -2,25 +2,22 @@
   "kind": "ReplicationController",
   "apiVersion": "v1beta3",
   "metadata": {
-    "name": "hello-stable-controller",
-    "labels": {
-      "environment": "prod",
-      "name": "hello",
-      "track": "stable"
-    }
+    "name": "hello-stable-controller-v1"
   },
   "spec": {
     "replicas": 1,
     "selector": {
       "environment": "prod",
-      "name": "hello",
+      "name": "hello-v1",
+      "app": "hello",
       "track": "stable"
     },
     "template": {
       "metadata": {
         "labels": {
           "environment": "prod",
-          "name": "hello",
+          "name": "hello-v1",
+          "app": "hello",
           "track": "stable"
         }
       },
@@ -35,12 +32,6 @@
                 "protocol": "TCP"
               }
             ],
-            "resources": {
-              "limits": {
-                "cpu": "100m",
-                "memory": "10000000"
-              }
-            },
             "terminationMessagePath": "/dev/termination-log",
             "imagePullPolicy": "IfNotPresent"
           }

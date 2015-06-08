@@ -9,6 +9,7 @@
     "selector": {
       "environment": "prod",
       "name": "hello-v2",
+      "app": "hello",
       "track": "stable"
     },
     "template": {
@@ -16,6 +17,7 @@
         "labels": {
           "environment": "prod",
           "name": "hello-v2",
+          "app": "hello",
           "track": "stable"
         }
       },

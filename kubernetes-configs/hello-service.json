@@ -5,7 +5,7 @@
     "name": "hello-stable"
   },
   "spec": {
-    "publicIPs": ["104.197.5.52"],
+    "publicIPs": [],
     "ports": [
       {
         "name": "http",
@@ -16,8 +16,7 @@
     ],
     "selector": {
       "environment": "prod",
-      "name": "hello"
-    },
-    "sessionAffinity": "None"
+      "app": "hello"
+    }
   }
 }
