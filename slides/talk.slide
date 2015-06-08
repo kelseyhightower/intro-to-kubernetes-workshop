@@ -10,7 +10,7 @@ kelsey.hightower@coreos.com
 
 * Course Outline
 
-Kubernetes Core Concepts
+Kubernetes Core Concepts.
 
 - containers
 - pods
@@ -20,7 +20,7 @@ Kubernetes Core Concepts
 
 * Course Outline
 
-Kubernetes Infrastructure
+Kubernetes Infrastructure.
 
 - CoreOS
 - Docker
@@ -29,6 +29,17 @@ Kubernetes Infrastructure
 - Kubernetes controller
 - Kubernetes node
 - Terraform
+- Google Compute Engine
+
+* Course Outline
+
+Client tools.
+
+- ssh
+- gcloud
+- packer
+- terraform
+- kubectl
 
 * Containers
 
