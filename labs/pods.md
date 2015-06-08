@@ -59,6 +59,14 @@ kubectl get pods hello
 gcloud compute instances list --project kubestack
 ```
 
+```
+ssh core@${HOST}
+```
+
+```
+curl ${PodIP}
+```
+
 ## Delete the hello pod
 
 Yes. Delete the hello pod right now!
