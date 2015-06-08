@@ -39,7 +39,7 @@ Open three terminals
 ### Terminal 1
 
 ```
-kubectl rolling-update --update-period=3s hello-stable-controller -f hello-stable-controller-v2.json
+kubectl rolling-update --update-period=3s hello-stable-controller-v1 -f hello-stable-controller-v2.json
 ```
 
 ### Terminal 2
