@@ -13,24 +13,24 @@ kubectl get nodes
 Copy the node template:
 
 ```
-cp kubernetes-configs/node-template.json kubernetes-configs/testing-kube0.c.kubestack.internal.json
+cp kubernetes-configs/node-template.json kubernetes-configs/testing-kube0.c.${project-id}.internal.json
 ```
 
-Edit: `kubernetes-configs/testing-kube0.c.kubestack.internal.json`
+Edit: `kubernetes-configs/testing-kube0.c.${project-id}.internal.json`
 
 ```
 {
   "kind": "Node",
   "apiVersion": "v1beta3",
   "metadata": {
-    "name": "testing-kube0.c.kubestack.internal",
+    "name": "testing-kube0.c.${project-id}.internal",
     "labels": {
       "environment": "testing",
       "name": "kube0"
     }
   },
   "spec": {
-    "externalID": "testing-kube0.c.kubestack.internal"
+    "externalID": "testing-kube0.c.${project-id}.internal"
   }
 }
 ```
@@ -38,7 +38,7 @@ Edit: `kubernetes-configs/testing-kube0.c.kubestack.internal.json`
 Register the node using kubectl
 
 ```
-kubectl create -f kubernetes-configs/testing-kube0.c.kubestack.internal.json
+kubectl create -f kubernetes-configs/testing-kube0.c.${project-id}.internal.json
 ```
 
 ```
