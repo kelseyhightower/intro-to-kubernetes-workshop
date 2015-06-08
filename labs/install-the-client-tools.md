@@ -12,6 +12,10 @@ gcloud config set project <your-project-name>
 Note: if you don't yet have a Google Cloud project created, then follow the signup
 instructions [here](https://cloud.google.com/compute/docs/signup).
 
+Grab the service account docs from here:
+
+[Google Service Account Docs](https://developers.google.com/console/help/new/#serviceaccounts)
+
 ## Packer
 
 [Packer install guide](https://packer.io/docs/installation.html)
