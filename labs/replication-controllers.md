@@ -26,11 +26,11 @@ kubectl get rc
 ## Creating a replicationController
 
 ```
-cat hello-stable-controller.json
+cat hello-stable-controller-v1.json
 ```
 
 ```
-kubectl create -f hello-stable-controller.json
+kubectl create -f hello-stable-controller-v1.json
 ```
 
 ```
@@ -43,7 +43,7 @@ kubectl get pods
 ### Resize the replication controller
 
 ```
-kubectl resize --replicas=3 rc hello-stable-controller 
+kubectl resize --replicas=3 rc hello-stable-controller-v1
 ```
 
 ```
