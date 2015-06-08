@@ -35,6 +35,8 @@ Copy the node template:
 cp kubernetes-configs/node-template.json kubernetes-configs/testing-kube0.c.kubestack.internal.json
 ```
 
+Edit: `kubernetes-configs/testing-kube0.c.kubestack.internal.json`
+
 ```
 {
   "kind": "Node",
@@ -42,7 +44,7 @@ cp kubernetes-configs/node-template.json kubernetes-configs/testing-kube0.c.kube
   "metadata": {
     "name": "testing-kube0.c.kubestack.internal",
     "labels": {
-      "environment": testing"",
+      "environment": "testing",
       "name": "kube0"
     }
   },
@@ -56,4 +58,10 @@ Register the node using kubectl
 
 ```
 kubectl create -f kubernetes-configs/testing-kube0.c.kubestack.internal.json
+```
+
+### Viewing node details
+
+```
+kubectl describe nodes testing-kube0.c.kubestack.internal
 ```

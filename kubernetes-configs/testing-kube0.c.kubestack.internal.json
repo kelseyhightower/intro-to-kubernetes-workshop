@@ -1,0 +1,14 @@
+{
+  "kind": "Node",
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "testing-kube0.c.kubestack.internal",
+    "labels": {
+      "environment": "testing",
+      "name": "kube0"
+    }
+  },
+  "spec": {
+    "externalID": "testing-kube0.c.kubestack.internal"
+  }
+}
