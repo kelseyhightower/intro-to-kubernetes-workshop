@@ -64,3 +64,9 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 * [Terraform](https://www.terraform.io)
 * [flannel](https://github.com/coreos/flannel)
 * [etcd](https://coreos.com/docs/distributed-configuration/getting-started-with-etcd)
+
+
+Try this image name
+```
+https://www.googleapis.com/compute/v1/projects/kubestack/global/images/kubestack-0-17-1-v20150606
+```
