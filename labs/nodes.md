@@ -10,25 +10,6 @@ kubectl get nodes
 
 ### Adding nodes with kubectl
 
-Edit `kubernetes-configs/node-template.json`
-
-``` 
-{
-  "kind": "Node",
-  "apiVersion": "v1beta3",
-  "metadata": {
-    "name": "",
-    "labels": {
-      "environment": "",
-      "name": ""
-    }
-  },
-  "spec": {
-    "externalID": ""
-  }
-}
-```
-
 Copy the node template:
 
 ```
