@@ -63,3 +63,15 @@ sudo docker run -d --net=host \
   -v /etc/nginx/conf.d:/etc/nginx/conf.d \
   nginx
 ```
+
+### laptop
+
+```
+gcloud compute firewall-rules create default-allow-nginx --allow tcp:80
+```
+
+Visit 
+
+```
+http://hello.PROJECT_NAME.io
+```
