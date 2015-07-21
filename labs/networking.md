@@ -19,11 +19,6 @@ gcloud compute routes create default-route-10-200-3-0-24 \
   --next-hop-instance node3
 ```
 
-Setup Client SSH Tunnel to Master
-
-`gcloud compute ssh node0 -- -f -nNT -L 8080:127.0.0.1:8080`
-
-
 ### Getting Containers Online
 
 ```
