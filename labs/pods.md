@@ -3,12 +3,6 @@
 * Deploy a pod with the kubectl cli tool
 * Manage the basic life cycle of a pod
 
-## Workspace
-
-```
-cd intro-to-kubernetes-workshop/kubernetes-configs
-```
-
 ## Listing Pods
 
 ```
@@ -18,15 +12,9 @@ kubectl get pods
 ## Creating Pods
 
 ```
-cat hello-pod.json
-```
-
-```
-kubectl create -f hello-pod.json
-```
-
-```
-gcloud compute firewall-rules create default-allow-hello --allow tcp:80 --project kubestack
+kubectl run hello \
+  --labels="app=hello,track=stable" \
+  --image=quay.io/kelseyhightower/hello:1.0.0
 ```
 
 ## Get Pod info
@@ -56,21 +44,13 @@ kubectl get pods hello
 ```
 
 ```
-gcloud compute instances list --project kubestack
+gcloud compute instances list
 ```
 
 ```
-ssh core@${HOST}
+gcloud compute ssh HOST
 ```
 
 ```
 curl ${PodIP}
-```
-
-## Delete the hello pod
-
-Yes. Delete the hello pod right now!
-
-```
-kubectl delete pods hello
 ```
