@@ -19,6 +19,9 @@ gcloud compute routes create default-route-10-200-3-0-24 \
   --next-hop-instance node3
 ```
 
+```
+gcloud compute routes list
+```
 ### Getting Containers Online
 
 ```
