@@ -37,7 +37,7 @@ Verify:
 sudo systemctl status kubelet
 ```
 
-### node2
+### node3
 
 ```
 gcloud compute ssh node1
@@ -48,7 +48,19 @@ Repeat the steps from above.
 ### node3
 
 ```
-gcloud compute ssh node1
+gcloud compute ssh node3
 ```
 
 Repeat the steps from above.
+
+## List registered nodes
+
+### node0
+
+```
+gcloud compute ssh node0
+```
+
+```
+/opt/bin/kubectl get nodes
+```
