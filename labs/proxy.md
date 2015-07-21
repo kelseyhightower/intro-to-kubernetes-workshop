@@ -37,6 +37,12 @@ Verify:
 sudo systemctl status kube-proxy
 ```
 
+Check iptables
+
+```
+sudo iptables -vL -n -t nat
+```
+
 ### node2
 
 ```
