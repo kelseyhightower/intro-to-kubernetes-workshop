@@ -1,5 +1,7 @@
 # Deploying the Kubelet
 
+## Install and configure the Kubelet
+
 ### node1
 
 ```
