@@ -31,6 +31,12 @@ sudo systemctl enable kubelet
 sudo systemctl start kubelet
 ```
 
+Verify:
+
+```
+sudo systemctl status kubelet
+```
+
 ### node2
 
 ```
