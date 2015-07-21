@@ -25,7 +25,6 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 ### Client tools
 
   * gcloud
-  * kubectl
 
 #### Labs
 
@@ -44,6 +43,13 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * [Provision CoreOS Cluster](labs/provisioning-coreos-on-gce.md)
   * [Configure Docker](labs/docker.md)
   * [Configure Networking](labs/networking.md)
+
+### Provision the Controller Node
+
+  * [etcd](labs/controller-node-etcd.md)
+  * [API Server](labs/controller-node-apiserver.md)
+  * [Controller Manager](labs/controller-node-controller-manager.md)
+  * [Scheduler](labs/controller-node-scheduler.md)
 
 ### Managing Applications with Kubernetes
 
