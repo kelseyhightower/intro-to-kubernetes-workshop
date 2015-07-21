@@ -13,6 +13,11 @@ sudo curl https://kuar.io/kube-proxy.service \
   -o /etc/systemd/system/kube-proxy.service
 ```
 
+Get your project name:
+```
+gcloud config list project
+```
+
 Edit the kube-proxy unit file and configure the master flag:
 
 ```
