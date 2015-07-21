@@ -24,7 +24,7 @@ sudo vim /etc/hosts
 NGINX_EXTERNAL_IP hello.PROJECT_NAME.io
 ```
 
-#### Configure nginx
+### Configure nginx
 
 ```
 gcloud compute ssh nginx
@@ -56,7 +56,7 @@ sudo mkdir -p /etc/nginx/conf.d
 sudo cp intro-to-kubernetes-workshop/nginx/hello.conf  /etc/nginx/conf.d/
 ```
 
-#### Start nginx
+### Start nginx
 
 ```
 sudo docker run -d --net=host \
@@ -64,7 +64,9 @@ sudo docker run -d --net=host \
   nginx
 ```
 
-### laptop
+### Testing 
+
+#### laptop
 
 ```
 gcloud compute firewall-rules create default-allow-nginx --allow tcp:80
