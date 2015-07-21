@@ -19,7 +19,3 @@ Confirm that your nodes are up with:
 ```
 gcloud compute instances list
 ```
-
-Your nodes are now ready!
-
-Next Step: [Configure Docker](docker.md)
