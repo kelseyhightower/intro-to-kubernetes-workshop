@@ -46,6 +46,8 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 
 ### Provision the Controller Node
 
+#### Labs
+
   * [etcd](labs/controller-node-etcd.md)
   * [API Server](labs/controller-node-apiserver.md)
   * [Controller Manager](labs/controller-node-controller-manager.md)
