@@ -15,7 +15,3 @@ instructions [here](https://cloud.google.com/compute/docs/signup).
 Grab the service account docs from here:
 
 [Google Service Account Docs](https://developers.google.com/console/help/new/#serviceaccounts)
-
-## kubectl
-
-[Kubernetes install guide](https://github.com/GoogleCloudPlatform/kubernetes/releases/tag/v1.0.1)
