@@ -1,5 +1,10 @@
 # Cluster Add-on: UI
 
+### node0
+
+```
+gcloud compute ssh node0
+```
 
 ```
 /opt/bin/kubectl create -f https://kuar.io/kube-ui-rc.yaml
@@ -13,7 +18,7 @@ Next create the service for the UI:
 
 At this point the Kubernetes UI add-on should be up and running. The Kubernetes API server provides access to the UI via the /ui endpoint. However the Kubernetes API is not accessable remotely due to the lack of security.
 
-==== Securely Exposing the API Server 
+## Securely Exposing the API Server 
 
 Instead of exposing the API server to the public internet over an insecure port, a SSH tunnel can be can be create between the remote client and API server.
 
