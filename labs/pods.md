@@ -38,15 +38,3 @@ kubectl describe pods hello
 ```
 curl http://IP
 ```
-
-```
-gcloud compute instances list
-```
-
-```
-gcloud compute ssh HOST
-```
-
-```
-curl ${PodIP}
-```
