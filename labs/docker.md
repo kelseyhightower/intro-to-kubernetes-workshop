@@ -9,23 +9,25 @@ $ sudo curl https://kuar.io/docker.service -o /etc/systemd/system/docker.service
 ```
 
 Edit the Docker unit file:
+
 ```
-    [Unit]
-    Description=Docker Application Container Engine
-    Documentation=http://docs.docker.io
-    [Service]
-    ExecStart=/usr/bin/docker --daemon \
-      --bip=10.200.0.1/24 \
-      --iptables=false \
-      --ip-masq=false \
-      --host=unix:///var/run/docker.sock \
-      --storage-driver=overlay
-    Restart=on-failure
-    RestartSec=5
-    [Install]
-    WantedBy=multi-user.target
+[Unit]
+Description=Docker Application Container Engine
+Documentation=http://docs.docker.io
+[Service]
+ExecStart=/usr/bin/docker --daemon \
+  --bip=10.200.0.1/24 \
+  --iptables=false \
+  --ip-masq=false \
+  --host=unix:///var/run/docker.sock \
+  --storage-driver=overlay
+Restart=on-failure
+RestartSec=5
+[Install]
+WantedBy=multi-user.target
 ```
 
+Then start docker:
 
 ```
 $ sudo systemctl daemon-reload
@@ -33,4 +35,35 @@ $ sudo systemctl enable docker
 $ sudo systemctl start docker
 ```
 
-Do the same for the nodes 2 and 3, remember to chang the bip flag!
+Confirm docker is running by typing `docker version`:
+
+```
+Client version: 1.6.2
+Client API version: 1.18
+Go version (client): go1.4.2
+Git commit (client): 7c8fca2-dirty
+OS/Arch (client): linux/amd64
+Server version: 1.6.2
+Server API version: 1.18
+Go version (server): go1.4.2
+Git commit (server): 7c8fca2-dirty
+OS/Arch (server): linux/amd64
+```
+
+Do the same for the nodes 2 and 3, remember to change the bip flag in the docker unit file!
+
+Node 2 should be:
+```
+ExecStart=/usr/bin/docker --daemon \
+  --bip=10.200.0.2/24 \
+  --iptables=false \
+```
+
+Node 3 should be:
+```
+ExecStart=/usr/bin/docker --daemon \
+  --bip=10.200.0.2/24 \
+  --iptables=false \
+```
+
+Next Step: [Configure Networking](networking.md)
