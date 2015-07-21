@@ -68,7 +68,7 @@ docker run -t -i --rm busybox /bin/sh
 ```
 
 ```
-ping -c 3 10.200.0.2
+ping -c 3 10.200.1.2
 ```
 
 ```
