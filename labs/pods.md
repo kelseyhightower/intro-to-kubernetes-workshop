@@ -3,6 +3,10 @@
 * Deploy a pod with the kubectl cli tool
 * Manage the basic life cycle of a pod
 
+```
+gcloud compute ssh node0
+```
+
 ## Listing Pods
 
 ```
