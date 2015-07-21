@@ -4,6 +4,12 @@
 * Deploy a canary application for testing
 * Zero downtime rolling update to a new Docker image
 
+### node0
+
+```
+gcloud compute ssh node0
+```
+
 ## Send the Canary
 
 ```
