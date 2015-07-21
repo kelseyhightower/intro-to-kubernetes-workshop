@@ -58,6 +58,13 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * [Rolling updates](labs/rolling-updates.md)
   * Running the Kubernetes examples
 
+### Cluster Add-ons
+
+#### Labs
+
+  * [DNS](labs/cluster-add-on-dns.md)
+  * [Web UI](labs/cluster-add-on-ui.md)
+
 ## Links
 
   * [Kubernetes](http://googlecloudplatform.github.io/kubernetes)
