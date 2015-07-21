@@ -2,6 +2,16 @@
 
 Kubernetes offers a DNS cluster add-on that provides DNS A and SRV records for Kubernetes services. The heavy lifting is done by SkyDNS, an etcd backed DNS server that supports dynamic updates from the Kubernetes API.
 
+### laptop
+
+Allow add-ons to query the API server
+
+```
+gcloud compute firewall-rules create default-allow-local-api \
+  --allow tcp:8080 \
+  --source-ranges 10.200.0.0/16
+```
+
 ### node0
 
 ```
@@ -48,5 +58,27 @@ Next create the SkyDNS service:
 ### Validate
 
 ```
-kubectl get rc --all-namespaces
+/opt/bin/kubectl get rc --all-namespaces
+```
+
+Test DNS lookups
+
+```
+wget https://kuar.io/busybox.yaml
+```
+
+```
+cat busybox.yaml
+```
+
+```
+/opt/bin/kubectl create -f busybox.yaml
+```
+
+```
+/opt/bin/kubectl get pods busybox
+```
+
+```
+/opt/bin/kubectl exec busybox -- nslookup kubernetes
 ```
