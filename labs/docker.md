@@ -66,4 +66,6 @@ ExecStart=/usr/bin/docker --daemon \
   --iptables=false \
 ```
 
+Docker is now setup!
+
 Next Step: [Configure Networking](networking.md)

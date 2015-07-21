@@ -24,4 +24,6 @@ node2                us-central1-a n1-standard-1             10.240.216.120 146.
 node3                us-central1-a n1-standard-1             10.240.214.146 104.197.7.33   RUNNING
 ```
 
+Your nodes are now ready!
+
 Next Step: [Configure Docker](docker.md)
