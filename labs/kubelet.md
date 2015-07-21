@@ -15,10 +15,15 @@ sudo curl https://kuar.io/kubelet.service \
   -o /etc/systemd/system/kubelet.service
 ```
 
+Get your project name:
+```
+gcloud config list project
+```
+
 Edit the kubelet unit file and set the api-server flag:
 
 ```
-vim /etc/systemd/system/kubelet.service
+sudo vim /etc/systemd/system/kubelet.service
 ```
 
 ```
