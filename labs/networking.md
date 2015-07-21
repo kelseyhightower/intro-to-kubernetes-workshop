@@ -23,37 +23,58 @@ Setup Client SSH Tunnel to Master
 `gcloud compute ssh node0 -- -f -nNT -L 8080:127.0.0.1:8080`
 
 
-Setup masquerading
+### Getting Containers Online
 
-#FIXME need for loop?
-`gcloud compute ssh node0 --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"`
+```
+gcloud compute ssh node0 --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
+```
 
-Confirm networking
+```
+gcloud compute ssh node1 --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
+```
 
-`gcloud compute ssh node0`
-`docker run -t -i --rm busybox /bin/sh`
+```
+gcloud compute ssh node2 --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
+```
 
-You are inside the container, run this command:
+```
+gcloud compute ssh node3 --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"`
+```
 
-`ip -f inet addr show eth0`
+### Confirm networking
 
-And get your container's ip address:
+#### Terminal 1
+
+```
+gcloud compute ssh node0
+```
+```
+docker run -t -i --rm busybox /bin/sh
+```
+
+```
+ip -f inet addr show eth0
+```
 
 ```
     4: eth0: <BROADCAST,UP,LOWER_UP> mtu 1460 qdisc noqueue state UP group default
         inet 10.200.0.2/24 scope global eth0
            valid_lft forever preferred_lft forever
 ```
-Open another terminal and launch a busybox container on a different node:
 
-`gcloud compute ssh node1`
-`docker run -t -i --rm busybox /bin/sh`
+#### Terminal 2
 
-At the command prompt ping the IP address of the first busybox container:
+```
+gcloud compute ssh node1
+```
 
-`ping -c 3 10.200.0.2`
+```
+docker run -t -i --rm busybox /bin/sh
+```
 
-You should get a response:
+```
+ping -c 3 10.200.0.2
+```
 
 ```
 PING 10.200.0.2 (10.200.0.2): 56 data bytes
@@ -65,11 +86,9 @@ PING 10.200.0.2 (10.200.0.2): 56 data bytes
 round-trip min/avg/max = 0.667/0.753/0.914 ms
 ```
 
-While you're there, confirm your container can talk to the outside:
-
-`ping -c google.com`
+```
+ping -c google.com
+```
 
 
 If you get simliar output it means you’ve successfully setup routes between two Docker hosts. Type the exit command at both busybox command prompts to exit the containers.
-
-Next Step: (Something)[http://google.com]
