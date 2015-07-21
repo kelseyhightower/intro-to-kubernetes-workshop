@@ -40,7 +40,7 @@ sudo systemctl status kube-proxy
 ### node2
 
 ```
-gcloud compute ssh node3
+gcloud compute ssh node2
 ```
 
 Repeat the steps from above.
