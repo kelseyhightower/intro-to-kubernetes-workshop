@@ -19,7 +19,6 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * CoreOS
   * Docker
   * etcd
-  * flannel
   * Kubernetes master
   * Kubernetes node
 
@@ -38,11 +37,13 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * proxy
   * apiserver
   * scheduler
-  * replication controller
+  * controller manager
 
 #### Labs
 
   * [Provision CoreOS Cluster](labs/provisioning-coreos-on-gce.md)
+  * [Configure Docker](labs/docker.md)
+  * [Configure Networking](labs/networking.md)
 
 ### Managing Applications with Kubernetes
 
