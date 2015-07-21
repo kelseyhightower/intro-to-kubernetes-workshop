@@ -16,16 +16,6 @@ Grab the service account docs from here:
 
 [Google Service Account Docs](https://developers.google.com/console/help/new/#serviceaccounts)
 
-## Packer
-
-[Packer install guide](https://packer.io/docs/installation.html)
-
-
-## Terraform
-
-[Terraform install guide](https://www.terraform.io/intro/getting-started/install.html)
-
-
 ## kubectl
 
-[Kubernetes install guide](https://github.com/GoogleCloudPlatform/kubernetes/releases/tag/v0.17.1)
+[Kubernetes install guide](https://github.com/GoogleCloudPlatform/kubernetes/releases/tag/v1.0.1)
