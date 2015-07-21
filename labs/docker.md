@@ -62,7 +62,7 @@ ExecStart=/usr/bin/docker --daemon \
 Node 3 should be:
 ```
 ExecStart=/usr/bin/docker --daemon \
-  --bip=10.200.0.2/24 \
+  --bip=10.200.0.3/24 \
   --iptables=false \
 ```
 
