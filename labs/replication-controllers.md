@@ -32,10 +32,3 @@ kubectl scale rc hello --replicas=10
 kubectl get pods --watch
 ```
 
-## Deleting a replicationController and pods
-
-Only do this if you need to start over or clean up.
-
-```
-kubectl delete rc hello
-```
