@@ -59,6 +59,13 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 
   * [Hands on with kubectl](labs/kubectl.md)
 
+### Provision the Worker Nodes
+
+#### Labs
+
+  * [kubelet](labs/kubelet.md)
+  * [proxy](labs/proxy.md)
+
 ### Managing Applications with Kubernetes
 
   * Kubernetes API
