@@ -42,7 +42,7 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 
 #### Labs
 
-  * [Provisioning Kubernetes Clusters](labs/provisioning-kubernetes-clusters.md)
+  * [Provision CoreOS Cluster](labs/provisioning-coreos-on-gce.md)
 
 ### Managing Applications with Kubernetes
 
