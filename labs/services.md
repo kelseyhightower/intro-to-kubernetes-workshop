@@ -3,10 +3,12 @@
 * Create a service using the kubectl cli tool
 * Map a service to pod lables
 
-## Workspace
+```
+gcloud compute ssh node0
+```
 
 ```
-cd intro-to-kubernetes-workshop/kubernetes-configs
+git clone https://github.com/kelseyhightower/intro-to-kubernetes-workshop.git
 ```
 
 ## Listing Services
@@ -18,11 +20,11 @@ kubectl get services
 ## Creating Services
 
 ```
-cat hello-svc.yaml
+cat intro-to-kubernetes-workshop/kubernetes-configs/hello-svc.yaml
 ```
 
 ```
-kubectl create -f hello-svc.yaml
+kubectl create -f intro-to-kubernetes-workshop/kubernetes-configs/hello-svc.yaml
 ```
 
 ```
