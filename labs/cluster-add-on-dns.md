@@ -44,3 +44,9 @@ Next create the SkyDNS service:
 ```
 /opt/bin/kubectl create -f https://kuar.io/skydns-svc.yaml
 ```
+
+### Validate
+
+```
+kubectl get rc --all-namespaces
+```
