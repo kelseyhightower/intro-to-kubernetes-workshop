@@ -31,6 +31,12 @@ sudo systemctl enable kube-proxy
 sudo systemctl start kube-proxy
 ```
 
+Verify:
+
+```
+sudo systemctl status kube-proxy
+```
+
 ### node2
 
 ```
