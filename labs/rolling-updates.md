@@ -51,7 +51,7 @@ kubectl rolling-update hello --update-period=3s --image=quay.io/kelseyhightower/
 #### laptop
 
 ```
-while true; do curl http://${EXTERNAL_IP}; echo; sleep 2; done
+while true; do curl http://hello.PROJECT_NAME.io; echo; sleep 1; done
 ```
 
 ### Terminal 3
