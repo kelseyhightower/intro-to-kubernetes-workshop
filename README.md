@@ -42,6 +42,8 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 #### Labs
 
   * [Provision CoreOS Cluster](labs/provisioning-coreos-on-gce.md)
+  * [Configure Docker](labs/docker.md)
+  * [Configure Networking](labs/networking.md)
 
 ### Managing Applications with Kubernetes
 
