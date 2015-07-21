@@ -1,6 +1,6 @@
 # Intro to Kubernetes Workshop
 
-Kubernetes Version: 0.17.1
+Kubernetes Version: 1.0.1
 
 The slides from this workshop are hosted [online](http://go-talks.appspot.com/github.com/kelseyhightower/intro-to-kubernetes-workshop/slides/talk.slide#1)
 
@@ -22,14 +22,11 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * Kubernetes node
 
 ### Client tools
-  * packer
-  * terraform
-  * etcdctl
+  * gcloud
   * kubectl
 
 #### Labs
   * [Install the client tools](labs/install-the-client-tools.md)
-  * [Creating Kubernetes Images with Packer](labs/creating-kubernetes-images-with-packer.md)
 
 ### Kubernetes Core Components
   * kubelet
@@ -64,9 +61,3 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 * [Terraform](https://www.terraform.io)
 * [flannel](https://github.com/coreos/flannel)
 * [etcd](https://coreos.com/docs/distributed-configuration/getting-started-with-etcd)
-
-
-Try this image name
-```
-https://www.googleapis.com/compute/v1/projects/kubestack/global/images/kubestack-0-17-1-v20150606
-```
