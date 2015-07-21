@@ -26,12 +26,12 @@ Setup Client SSH Tunnel to Master
 ### Getting Containers Online
 
 ```
-gcloud compute ssh node1 \
+gcloud compute ssh node0 \
   --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
 ```
 
 ```
-gcloud compute ssh node2 \
+gcloud compute ssh node1 \
   --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
 ```
 
@@ -50,7 +50,7 @@ gcloud compute ssh node3 \
 #### Terminal 1
 
 ```
-gcloud compute ssh node0
+gcloud compute ssh node1
 ```
 ```
 docker run -t -i --rm busybox /bin/sh
@@ -69,7 +69,7 @@ ip -f inet addr show eth0
 #### Terminal 2
 
 ```
-gcloud compute ssh node1
+gcloud compute ssh node2
 ```
 
 ```
@@ -93,6 +93,3 @@ round-trip min/avg/max = 0.667/0.753/0.914 ms
 ```
 ping -c google.com
 ```
-
-
-If you get simliar output it means you’ve successfully setup routes between two Docker hosts. Type the exit command at both busybox command prompts to exit the containers.
