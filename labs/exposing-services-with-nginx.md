@@ -17,12 +17,11 @@ gcloud compute instances create nginx \
 Edit etcd hosts on your local machine.
 
 ```
-vim /etc/hosts
+sudo vim /etc/hosts
 ```
 
 ```
 NGINX_EXTERNAL_IP hello.PROJECT_NAME.io
-NGINX_EXTERNAL_IP canary.hello.PROJECT_NAME.io
 ```
 
 #### Configure nginx
@@ -35,9 +34,26 @@ gcloud compute ssh nginx
 git clone https://github.com/kelseyhightower/intro-to-kubernetes-workshop.git
 ```
 
+Review the nginx vhost configuration:
+
+```
+cat intro-to-kubernetes-workshop/nginx/hello.conf
+```
+
+Substitute the project name:
+
+```
+sed -i -e 's/PROJECT_NAME/kuarlab/g;' intro-to-kubernetes-workshop/nginx/hello.conf
+```
+
+Copy the vhost configuration:
+
 ```
 sudo mkdir -p /etc/nginx/conf.d
-sudo cp intro-to-kubernetes-workshop/nginx/*.conf  /etc/nginx/conf.d/
+```
+
+```
+sudo cp intro-to-kubernetes-workshop/nginx/hello.conf  /etc/nginx/conf.d/
 ```
 
 #### Start nginx
