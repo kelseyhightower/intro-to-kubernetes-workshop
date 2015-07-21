@@ -2,6 +2,12 @@
 
 Kubernetes offers a DNS cluster add-on that provides DNS A and SRV records for Kubernetes services. The heavy lifting is done by SkyDNS, an etcd backed DNS server that supports dynamic updates from the Kubernetes API.
 
+### node0
+
+```
+gcloud compute ssh node0
+```
+
 Download the SkyDNS replication controller configuration:
 
 ```
