@@ -26,3 +26,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable kube-controller-manager
 sudo systemctl start kube-controller-manager
 ```
+
+Verify:
+
+```
+sudo systemctl status kube-controller-manager
+```
