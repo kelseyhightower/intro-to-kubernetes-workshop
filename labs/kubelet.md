@@ -33,8 +33,16 @@ sudo systemctl start kubelet
 
 ### node2
 
+```
+gcloud compute ssh node1
+```
+
 Repeat the steps from above.
 
 ### node3
+
+```
+gcloud compute ssh node1
+```
 
 Repeat the steps from above.
