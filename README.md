@@ -36,7 +36,7 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * replication controller
 
 #### Labs
-  * [Provisioning Kubernetes Clusters with Terraform](labs/provisioning-kubernetes-clusters-with-terraform.md)
+  * [Provisioning Kubernetes Clusters](labs/provisioning-kubernetes-clusters.md)
 
 ### Managing Applications with Kubernetes
   * Kubernetes API
@@ -44,7 +44,6 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 
 #### Labs
 
-  * [Creating and managing nodes](labs/nodes.md)
   * [Creating and managing pods](labs/pods.md)
   * [Creating and managing replication controllers](labs/replication-controllers.md)
   * [Creating and managing services](labs/services.md)
@@ -57,7 +56,4 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 * [gcloud Tool Guide](https://cloud.google.com/sdk/gcloud)
 * [Docker](https://docs.docker.com)
 * [CoreOS](https://coreos.com)
-* [Packer](https://packer.io)
-* [Terraform](https://www.terraform.io)
-* [flannel](https://github.com/coreos/flannel)
 * [etcd](https://coreos.com/docs/distributed-configuration/getting-started-with-etcd)
