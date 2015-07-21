@@ -26,3 +26,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable kube-apiserver
 sudo systemctl start kube-apiserver
 ```
+
+Verify:
+
+```
+sudo systemctl status kube-apiserver
+```
