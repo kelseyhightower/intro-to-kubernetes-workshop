@@ -40,9 +40,16 @@ gcloud compute firewall-rules create default-allow-hello --allow tcp:36000
 ```
 
 ## Validation
+```
+kubectl describe service hello
+```
 
 Try hitting the external IP address for each instance in your web browser on port 36000
 
 ```
 gcloud compute instances list
+```
+
+```
+curl EXTERNAL_IP_ADDRESS:36000
 ```
