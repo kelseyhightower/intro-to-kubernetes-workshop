@@ -31,6 +31,10 @@ kubectl create -f intro-to-kubernetes-workshop/kubernetes-configs/hello-svc.yaml
 kubectl get services
 ```
 
+## Create Hello firewall rule
+
+### laptop
+
 ```
 gcloud compute firewall-rules create default-allow-hello --allow tcp:36000
 ```
