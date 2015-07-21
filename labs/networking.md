@@ -1,4 +1,7 @@
-Create Kubernetes routes.
+# Configuring the Network
+
+
+### Create Routes
 
 ```
 gcloud compute routes create default-route-10-200-1-0-24 \
@@ -71,16 +74,6 @@ docker run -t -i --rm busybox /bin/sh
 
 ```
 ping -c 3 10.200.0.2
-```
-
-```
-PING 10.200.0.2 (10.200.0.2): 56 data bytes
-64 bytes from 10.200.0.2: seq=0 ttl=62 time=0.914 ms
-64 bytes from 10.200.0.2: seq=1 ttl=62 time=0.678 ms
-64 bytes from 10.200.0.2: seq=2 ttl=62 time=0.667 ms
---- 10.200.0.2 ping statistics ---
-3 packets transmitted, 3 packets received, 0% packet loss
-round-trip min/avg/max = 0.667/0.753/0.914 ms
 ```
 
 ```
