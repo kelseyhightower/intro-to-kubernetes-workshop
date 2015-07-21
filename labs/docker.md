@@ -1,14 +1,19 @@
 ## Configure the Docker bridge
 
-Connect to your first node by typing: `gcloud compute ssh node1`
 
-Once on the server:
+### node1
+
+```
+gcloud compute ssh node1
+```
+
+Download the docker unit file:
 
 ```
 $ sudo curl https://kuar.io/docker.service -o /etc/systemd/system/docker.service
 ```
 
-Then start docker:
+Start docker:
 
 ```
 $ sudo systemctl daemon-reload
@@ -16,37 +21,33 @@ $ sudo systemctl enable docker
 $ sudo systemctl start docker
 ```
 
-Confirm docker is running by typing `docker version`:
-
 ```
-Client version: 1.6.2
-Client API version: 1.18
-Go version (client): go1.4.2
-Git commit (client): 7c8fca2-dirty
-OS/Arch (client): linux/amd64
-Server version: 1.6.2
-Server API version: 1.18
-Go version (server): go1.4.2
-Git commit (server): 7c8fca2-dirty
-OS/Arch (server): linux/amd64
+ifconfig
+docker version
 ```
 
-Do the same for the nodes 2 and 3, remember to change the bip flag in the docker unit file!
+### node2
 
-Node 2 should be:
 ```
-ExecStart=/usr/bin/docker --daemon \
-  --bip=10.200.0.2/24 \
-  --iptables=false \
+gcloud compute ssh node2
 ```
 
-Node 3 should be:
+Edit `/etc/systemd/system/docker.service`
+
 ```
-ExecStart=/usr/bin/docker --daemon \
-  --bip=10.200.0.3/24 \
-  --iptables=false \
+--bip=10.200.2.1/24 \
 ```
 
-Docker is now setup!
+### node3
+
+```
+gcloud compute ssh node3
+```
+
+Edit `/etc/systemd/system/docker.service`
+
+```
+--bip=10.200.3.1/24 \
+```
 
 Next Step: [Configure Networking](networking.md)
