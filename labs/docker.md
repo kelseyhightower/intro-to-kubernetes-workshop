@@ -44,7 +44,9 @@ Download the docker unit file:
 sudo curl https://kuar.io/docker.service -o /etc/systemd/system/docker.service
 ```
 
-Edit `/etc/systemd/system/docker.service`
+```
+sudo vim /etc/systemd/system/docker.service
+```
 
 ```
 --bip=10.200.2.1/24 \
@@ -77,7 +79,11 @@ Download the docker unit file:
 sudo curl https://kuar.io/docker.service -o /etc/systemd/system/docker.service
 ```
 
-Edit `/etc/systemd/system/docker.service`
+Edit:
+
+```
+sudo vim /etc/systemd/system/docker.service
+```
 
 ```
 --bip=10.200.3.1/24 \
