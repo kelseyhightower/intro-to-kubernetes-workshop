@@ -39,10 +39,10 @@ Verify:
 sudo systemctl status kubelet
 ```
 
-### node3
+### node2
 
 ```
-gcloud compute ssh node1
+gcloud compute ssh node2
 ```
 
 Repeat the steps from above.
