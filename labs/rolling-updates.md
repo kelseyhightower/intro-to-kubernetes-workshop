@@ -2,7 +2,6 @@
 
 * Use multiple replication controllers with a single service
 * Deploy a canary application for testing
-* Zero downtime rolling update to a new Docker image
 
 ### node0
 
@@ -21,18 +20,12 @@ kubectl run hello-canary \
 
 ### Validation
 
-```
-kubectl get pods
-```
-
 Try hitting the service port on any of the knode instances.
 
-```
-gcloud compute instances list
-```
+#### laptop
 
 ```
-while true; do curl http://${EXTERNAL_IP}; echo; sleep 2; done
+while true; do curl http://hello.PROJECT_NAME.io; echo; sleep 1; done
 ```
 
 Did you find the canary?
@@ -43,17 +36,31 @@ Open three terminals
 
 ### Terminal 1
 
+#### node0
+
+```
+gcloud compute ssh node0
+```
+
 ```
 kubectl rolling-update hello --update-period=3s --image=quay.io/kelseyhightower/hello:2.0.0
 ```
 
 ### Terminal 2
 
+#### laptop
+
 ```
 while true; do curl http://${EXTERNAL_IP}; echo; sleep 2; done
 ```
 
 ### Terminal 3
+
+#### node0
+
+```
+gcloud compute ssh node0
+```
 
 ```
 kubectl get pods --watch
