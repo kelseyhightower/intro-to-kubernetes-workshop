@@ -26,19 +26,23 @@ Setup Client SSH Tunnel to Master
 ### Getting Containers Online
 
 ```
-gcloud compute ssh node0 --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
+gcloud compute ssh node0 \
+  --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
 ```
 
 ```
-gcloud compute ssh node1 --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
+gcloud compute ssh node1 \
+  --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
 ```
 
 ```
-gcloud compute ssh node2 --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
+gcloud compute ssh node2 \
+  --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
 ```
 
 ```
-gcloud compute ssh node3 --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"`
+gcloud compute ssh node3 \
+  --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"`
 ```
 
 ### Confirm networking
