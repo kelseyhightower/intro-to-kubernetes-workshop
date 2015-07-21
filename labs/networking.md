@@ -33,7 +33,7 @@ gcloud compute ssh node2 \
 
 ```
 gcloud compute ssh node3 \
-  --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"`
+  --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
 ```
 
 ### Confirm networking
