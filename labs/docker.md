@@ -8,25 +8,6 @@ Once on the server:
 $ sudo curl https://kuar.io/docker.service -o /etc/systemd/system/docker.service
 ```
 
-Edit the Docker unit file:
-
-```
-[Unit]
-Description=Docker Application Container Engine
-Documentation=http://docs.docker.io
-[Service]
-ExecStart=/usr/bin/docker --daemon \
-  --bip=10.200.0.1/24 \
-  --iptables=false \
-  --ip-masq=false \
-  --host=unix:///var/run/docker.sock \
-  --storage-driver=overlay
-Restart=on-failure
-RestartSec=5
-[Install]
-WantedBy=multi-user.target
-```
-
 Then start docker:
 
 ```

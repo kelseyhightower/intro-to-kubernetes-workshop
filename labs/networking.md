@@ -1,4 +1,4 @@
-## Create Kubernetes routes.
+Create Kubernetes routes.
 
 ```
 $ gcloud compute routes create default-route-10-200-0-0-24 \
@@ -18,17 +18,17 @@ $ gcloud compute routes create default-route-10-200-3-0-24 \
     --next-hop-instance node3
 ```
 
-## Setup Client SSH Tunnel to Master
+Setup Client SSH Tunnel to Master
 
 `gcloud compute ssh node0 -- -f -nNT -L 8080:127.0.0.1:8080`
 
 
-## Setup masquerading
+Setup masquerading
 
 #FIXME need for loop?
 `gcloud compute ssh node0 --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"`
 
-## Confirm networking
+Confirm networking
 
 `gcloud compute ssh node0`
 `docker run -t -i --rm busybox /bin/sh`
@@ -65,6 +65,11 @@ PING 10.200.0.2 (10.200.0.2): 56 data bytes
 round-trip min/avg/max = 0.667/0.753/0.914 ms
 ```
 
+While you're there, confirm your container can talk to the outside:
+
+`ping -c google.com`
+
+
 If you get simliar output it means you’ve successfully setup routes between two Docker hosts. Type the exit command at both busybox command prompts to exit the containers.
 
-Next Step: (...)[http://google.com]
+Next Step: (Something)[http://google.com]
