@@ -10,7 +10,11 @@ gcloud compute ssh node1
 Download the docker unit file:
 
 ```
-$ sudo curl https://kuar.io/docker.service -o /etc/systemd/system/docker.service
+sudo curl https://kuar.io/docker.service -o /etc/systemd/system/docker.service
+```
+
+```
+cat /etc/systemd/system/docker.service
 ```
 
 Start docker:
