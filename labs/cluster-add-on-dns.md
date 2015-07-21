@@ -31,16 +31,7 @@ vim skydns-rc.yaml
 ```
 
 ```
-- name: kube2sky
-  image: gcr.io/google_containers/kube2sky:1.11
-  resources:
-    limits:
-      cpu: 100m
-      memory: 50Mi
-  args:
-  # command = "/kube2sky"
-  - -domain=cluster.local
-  - -kube_master_url=http://node0.c.PROJECT_NAME.internal:8080
+- -kube_master_url=http://node0.c.PROJECT_NAME.internal:8080
 ```
 
 Create the SkyDNS replication controller:
