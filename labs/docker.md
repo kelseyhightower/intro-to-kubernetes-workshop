@@ -25,6 +25,8 @@ sudo systemctl enable docker
 sudo systemctl start docker
 ```
 
+Verify
+
 ```
 ifconfig
 docker version
