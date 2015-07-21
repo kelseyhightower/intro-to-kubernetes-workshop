@@ -24,27 +24,19 @@ kubectl run hello \
 ## Get Pod info
 
 ```
-kubectl get pods hello
+kubectl describe pods hello
 ```
 
-### More details with the describe command
+## Visit the running service
+
+Grab the `IP` address for the pod
 
 ```
 kubectl describe pods hello
 ```
 
-### Format output with a template
-
 ```
-kubectl get pods -o templatefile --template=pod.tmpl
-```
-
-## Visit the running service
-
-Grab the `HOST` IP address for the pod
-
-```
-kubectl get pods hello
+curl http://IP
 ```
 
 ```
