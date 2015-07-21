@@ -7,6 +7,7 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 ## Course Outline
 
 ### Kubernetes Core Concepts
+
   * container
   * pod
   * label
@@ -14,6 +15,7 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * network
 
 ### Kubernetes Infrastructure
+
   * CoreOS
   * Docker
   * etcd
@@ -22,13 +24,16 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * Kubernetes node
 
 ### Client tools
+
   * gcloud
   * kubectl
 
 #### Labs
+
   * [Install the client tools](labs/install-the-client-tools.md)
 
 ### Kubernetes Core Components
+
   * kubelet
   * proxy
   * apiserver
@@ -36,9 +41,11 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * replication controller
 
 #### Labs
+
   * [Provisioning Kubernetes Clusters](labs/provisioning-kubernetes-clusters.md)
 
 ### Managing Applications with Kubernetes
+
   * Kubernetes API
   * kubectl
 
@@ -47,13 +54,15 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * [Creating and managing pods](labs/pods.md)
   * [Creating and managing replication controllers](labs/replication-controllers.md)
   * [Creating and managing services](labs/services.md)
+  * [Exposing services with nginx](labs/exposing-services-with-nginx.md)
   * [Rolling updates](labs/rolling-updates.md)
   * Running the Kubernetes examples
 
 ## Links
 
-* [Kubernetes](http://googlecloudplatform.github.io/kubernetes)
-* [gcloud Tool Guide](https://cloud.google.com/sdk/gcloud)
-* [Docker](https://docs.docker.com)
-* [CoreOS](https://coreos.com)
-* [etcd](https://coreos.com/docs/distributed-configuration/getting-started-with-etcd)
+  * [Kubernetes](http://googlecloudplatform.github.io/kubernetes)
+  * [gcloud Tool Guide](https://cloud.google.com/sdk/gcloud)
+  * [Docker](https://docs.docker.com)
+  * [CoreOS](https://coreos.com)
+  * [etcd](https://coreos.com/docs/distributed-configuration/getting-started-with-etcd)
+  * [nginx](http://nginx.org)
