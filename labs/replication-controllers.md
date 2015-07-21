@@ -29,7 +29,7 @@ kubectl scale rc hello --replicas=10
 ```
 
 ```
-kubectl get pods
+kubectl get pods --watch
 ```
 
 ## Deleting a replicationController and pods
