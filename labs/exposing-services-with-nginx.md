@@ -21,8 +21,8 @@ vim /etc/hosts
 ```
 
 ```
-NGINX_PUBLIC_IP hello.PROJECT_NAME.io
-NGINX_PUBLIC_IP canary.hello.PROJECT_NAME.io
+NGINX_EXTERNAL_IP hello.PROJECT_NAME.io
+NGINX_EXTERNAL_IP canary.hello.PROJECT_NAME.io
 ```
 
 #### Configure nginx
