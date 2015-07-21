@@ -1,6 +1,6 @@
 # Provisioning CoreOS on Google Compute Engine
 
-Provision 4 CoreOS nodes by issuing the following command:
+Provision 4 CoreOS nodes:
 
 ```
 for i in {0..3}; do
@@ -14,7 +14,8 @@ for i in {0..3}; do
 done
 ```
 
-Confirm that your nodes are up with:
+
+List nodes:
 
 ```
 gcloud compute instances list
