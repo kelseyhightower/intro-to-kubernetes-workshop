@@ -1,5 +1,17 @@
 # Exposing Services with Nginx
 
+### Provision nginx
+
+```
+gcloud compute instances create nginx \
+  --image-project coreos-cloud \
+  --image coreos-stable-717-3-0-v20150710 \
+  --boot-disk-size 200GB \
+  --machine-type n1-standard-1 \
+  --can-ip-forward \
+  --scopes compute-rw
+```
+
 ### Prep 
 
 Edit etcd hosts on your local machine.
@@ -11,18 +23,6 @@ vim /etc/hosts
 ```
 NGINX_PUBLIC_IP hello.PROJECT_NAME.io
 NGINX_PUBLIC_IP canary.hello.PROJECT_NAME.io
-```
-
-### Provision nginx
-
-```
-gcloud compute instances create nginx \
-  --image-project coreos-cloud \
-  --image coreos-stable-717-3-0-v20150710 \
-  --boot-disk-size 200GB \
-  --machine-type n1-standard-1 \
-  --can-ip-forward \
-  --scopes compute-rw
 ```
 
 #### Configure nginx
