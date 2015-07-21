@@ -13,8 +13,14 @@ Download the docker unit file:
 sudo curl https://kuar.io/docker.service -o /etc/systemd/system/docker.service
 ```
 
+Edit:
+
 ```
-cat /etc/systemd/system/docker.service
+sudo vim /etc/systemd/system/docker.service
+```
+
+```
+--bip=10.200.1.1/24 \
 ```
 
 Start docker:
