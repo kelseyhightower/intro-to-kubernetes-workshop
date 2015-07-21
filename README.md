@@ -53,6 +53,12 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * [Controller Manager](labs/controller-node-controller-manager.md)
   * [Scheduler](labs/controller-node-scheduler.md)
 
+### The Kubernetes Client
+
+#### Labs
+
+  * [Hands on with kubectl](labs/kubectl.md)
+
 ### Managing Applications with Kubernetes
 
   * Kubernetes API
