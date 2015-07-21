@@ -1,6 +1,6 @@
 # Creating and managing services
 
-* Create a service using the kubecfg cli tool
+* Create a service using the kubectl cli tool
 * Map a service to pod lables
 
 ## Workspace
@@ -18,11 +18,11 @@ kubectl get services
 ## Creating Services
 
 ```
-cat hello-service.json
+cat hello-svc.yaml
 ```
 
 ```
-kubectl create -f hello-service.json
+kubectl create -f hello-svc.yaml
 ```
 
 ```
@@ -30,7 +30,7 @@ kubectl get services
 ```
 
 ```
-gcloud compute firewall-rules create default-allow-hello --allow tcp:80 --project kubestack
+gcloud compute firewall-rules create default-allow-hello --allow tcp:36000
 ```
 
 ## Validation
@@ -38,37 +38,5 @@ gcloud compute firewall-rules create default-allow-hello --allow tcp:80 --projec
 Try hitting the external IP address for each instance in your web browser.
 
 ```
-gcloud compute instances list --project kubestack
-```
-
-Why does it not work?
-
-### Fix it
-
-```
-kubectl delete services hello-stable
-```
-
-```
-gcloud compute instances list --project kubestack
-```
-
-Edit `hello-service.json`
-
-Add the `INTERNAL_IP`s to the publicIPs list:
-
-```
-"publicIPs": ["10.240.32.10", "10.240.98.37", "10.240.53.14"],
-```
-
-```
-kubectl create -f hello-service.json
-```
-
-## Deleting Services
-
-Only do this if you need to start over or clean up after you are done.
-
-```
-kubectl delete services hello-stable
+gcloud compute instances list
 ```
