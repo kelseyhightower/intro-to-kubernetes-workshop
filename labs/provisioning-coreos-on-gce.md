@@ -17,49 +17,31 @@ $ for i in {0..3}; do
 done
 ```
 
-## Configure the Docker bridge
-
-|=======
-|hostname|bip
-|node0.c.kuarlab.internal|10.200.0.1/24
-|node1.c.kuarlab.internal|10.200.1.1/24
-|node2.c.kuarlab.internal|10.200.2.1/24
-|node3.c.kuarlab.internal|10.200.3.1/24
-|=======
+You should see output like this:
 
 ```
-$ sudo curl https://kuar.io/docker.service \
-  -o /etc/systemd/system/docker.service
-```
+Created [https://www.googleapis.com/compute/v1/projects/avian-cat-91305/zones/us-central1-a/instances/node0].
+NAME  ZONE          MACHINE_TYPE  PREEMPTIBLE INTERNAL_IP   EXTERNAL_IP   STATUS
+node0 us-central1-a n1-standard-1             10.240.241.71 104.197.62.14 RUNNING
+Created [https://www.googleapis.com/compute/v1/projects/avian-cat-91305/zones/us-central1-a/instances/node1].
+NAME  ZONE          MACHINE_TYPE  PREEMPTIBLE INTERNAL_IP    EXTERNAL_IP    STATUS
+node1 us-central1-a n1-standard-1             10.240.150.126 104.197.61.200 RUNNING
+Created [https://www.googleapis.com/compute/v1/projects/avian-cat-91305/zones/us-central1-a/instances/node2].
+NAME  ZONE          MACHINE_TYPE  PREEMPTIBLE INTERNAL_IP    EXTERNAL_IP    STATUS
+node2 us-central1-a n1-standard-1             10.240.216.120 146.148.32.135 RUNNING
+Created [https://www.googleapis.com/compute/v1/projects/avian-cat-91305/zones/us-central1-a/instances/node3].
+NAME  ZONE          MACHINE_TYPE  PREEMPTIBLE INTERNAL_IP    EXTERNAL_IP  STATUS
+node3 us-central1-a n1-standard-1             10.240.214.146 104.197.7.33 RUNNING
 
 ```
-$ sudo systemctl daemon-reload
-$ sudo systemctl enable docker
-$ sudo systemctl start docker
-```
 
-## Create Kubernetes routes.
+You can confirm what you have running by issuing gcloud compute instances list:
 
 ```
-$ gcloud compute routes create default-route-10-200-0-0-24 \
-    --destination-range 10.200.0.0/24 \
-    --next-hop-instance node0
-
-$ gcloud compute routes create default-route-10-200-1-0-24 \
-    --destination-range 10.200.1.0/24 \
-    --next-hop-instance node1
-
-$ gcloud compute routes create default-route-10-200-2-0-24 \
-    --destination-range 10.200.2.0/24 \
-    --next-hop-instance node2
-
-$ gcloud compute routes create default-route-10-200-3-0-24 \
-    --destination-range 10.200.3.0/24 \
-    --next-hop-instance node3
-```
-
-## Setup Client SSH Tunnels
-
-```
-gcloud compute instances list
+$ gcloud compute instances list
+NAME                 ZONE          MACHINE_TYPE  PREEMPTIBLE INTERNAL_IP    EXTERNAL_IP    STATUS
+node0                us-central1-a n1-standard-1             10.240.241.71  104.197.62.14  RUNNING
+node1                us-central1-a n1-standard-1             10.240.150.126 104.197.61.200 RUNNING
+node2                us-central1-a n1-standard-1             10.240.216.120 146.148.32.135 RUNNING
+node3                us-central1-a n1-standard-1             10.240.214.146 104.197.7.33   RUNNING
 ```
