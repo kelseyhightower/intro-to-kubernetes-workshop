@@ -72,5 +72,5 @@ ping -c 3 10.200.1.2
 ```
 
 ```
-ping -c google.com
+ping -c 3 google.com
 ```
