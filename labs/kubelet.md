@@ -2,6 +2,11 @@
 
 ## Install and configure the Kubelet
 
+Get your project name:
+```
+gcloud config list project
+```
+
 ### node0
 
 ```
@@ -13,11 +18,6 @@ Download the kubelet unit file:
 ```
 sudo curl https://kuar.io/kubelet.service \
   -o /etc/systemd/system/kubelet.service
-```
-
-Get your project name:
-```
-gcloud config list project
 ```
 
 Edit the kubelet unit file and set the api-server flag:
