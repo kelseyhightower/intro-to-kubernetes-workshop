@@ -1,5 +1,10 @@
 # Deploying the Service Proxy
 
+Get your project name:
+```
+gcloud config list project
+```
+
 ### node0
 
 ```
@@ -11,11 +16,6 @@ Download the kube-proxy unit file:
 ```
 sudo curl https://kuar.io/kube-proxy.service \
   -o /etc/systemd/system/kube-proxy.service
-```
-
-Get your project name:
-```
-gcloud config list project
 ```
 
 Edit the kube-proxy unit file and configure the master flag:
