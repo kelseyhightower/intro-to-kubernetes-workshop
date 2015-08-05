@@ -5,7 +5,7 @@
 ### node1
 
 ```
-gcloud compute ssh node1
+gcloud compute ssh node0
 ```
 
 Download the kubelet unit file:
@@ -44,23 +44,13 @@ Verify:
 sudo systemctl status kubelet
 ```
 
-### node2
+### node1
 
 ```
-gcloud compute ssh node2
-```
-
-Repeat the steps from above.
-
-### node3
-
-```
-gcloud compute ssh node3
+gcloud compute ssh node1
 ```
 
 Repeat the steps from above.
-
-## List registered nodes
 
 ### node0
 
