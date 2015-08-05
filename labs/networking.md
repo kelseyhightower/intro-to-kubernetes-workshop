@@ -67,3 +67,5 @@ ping -c 3 10.200.0.2
 ```
 ping -c 3 google.com
 ```
+
+Exit both busybox instances.
