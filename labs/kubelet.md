@@ -2,7 +2,7 @@
 
 ## Install and configure the Kubelet
 
-### node1
+### node0
 
 ```
 gcloud compute ssh node0
