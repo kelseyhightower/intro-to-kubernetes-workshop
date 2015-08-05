@@ -1,0 +1,8 @@
+gcloud compute instances create node0 \
+ --image-project coreos-cloud \
+ --image coreos-stable-723-3-0-v20150804 \
+ --boot-disk-size 200GB \
+ --machine-type n1-standard-1 \
+ --can-ip-forward \
+ --scopes compute-rw \
+ --metadata-from-file startup-script=bootstrap-controller

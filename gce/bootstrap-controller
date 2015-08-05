@@ -1,0 +1,231 @@
+#!/bin/bash
+
+## Download binaries.
+mkdir -p /opt/bin
+curl https://kuar.io/docker -o /opt/bin/docker
+curl https://kuar.io/kubelet -o /opt/bin/kubelet
+curl https://kuar.io/kube-proxy -o /opt/bin/kube-proxy
+curl https://kuar.io/linux/kubectl -o /opt/bin/kubectl
+chmod +x /opt/bin/docker /opt/bin/kubelet /opt/bin/kube-proxy /opt/bin/kubectl
+
+mkdir -p /etc/kubernetes/manifests
+mkdir -p /srv/kubernetes
+
+cat <<EOF > /etc/kubernetes/manifests/etcd.yaml
+---
+apiVersion: "v1"
+kind: "Pod"
+metadata:
+  name: "etcd-server"
+spec: 
+  hostNetwork: true
+  containers: 
+    - name: "etcd-container"
+      image: "gcr.io/google_containers/etcd:2.0.12"
+      resources: 
+        limits: 
+          cpu: "200m"
+      command: 
+        - "/usr/local/bin/etcd"
+        - "--advertise-client-urls=http://127.0.0.1:2379"
+        - "--data-dir=/var/lib/etcd"
+        - "--listen-client-urls=http://127.0.0.1:2379"
+        - "--listen-peer-urls=http://127.0.0.1:2380"
+        - "--name=etcd0"
+      ports:
+        - name: "server"
+          containerPort: 2380
+          hostPort: 2380
+        - name: "client"
+          containerPort: 2379
+          hostPort: 2379
+      volumeMounts: 
+        - name: "datadir"
+          mountPath: "/var/lib/etcd"
+          readOnly: false
+  volumes: 
+    - name: "datadir"
+      hostPath: 
+        path: "/var/lib/etcd"
+EOF
+
+cat <<EOF > /etc/kubernetes/manifests/kube-apiserver.yaml
+---
+kind: "Pod"
+apiVersion: "v1"
+metadata: 
+  name: "kube-apiserver"
+spec: 
+  hostNetwork: true
+  containers: 
+    - name: "kube-apiserver"
+      image: "kelseyhightower/kube-apiserver:1.0.2"
+      command:
+        - "/usr/local/bin/kube-apiserver"
+        - "--insecure-bind-address=0.0.0.0"
+        - "--etcd-servers=http://127.0.0.1:2379"
+        - "--service-cluster-ip-range=10.200.20.0/24"
+        - "--service-node-port-range=30000-37000"
+      ports: 
+        - name: "https"
+          hostPort: 443
+          containerPort: 443
+        - name: "local"
+          hostPort: 8080
+          containerPort: 8080
+      volumeMounts: 
+        - name: "srvkube"
+          mountPath: "/srv/kubernetes"
+          readOnly: true
+        - name: "etcssl"
+          mountPath: "/etc/ssl"
+          readOnly: true
+      livenessProbe: 
+        httpGet: 
+          path: "/healthz"
+          port: 8080
+        initialDelaySeconds: 15
+        timeoutSeconds: 15
+  volumes: 
+    - name: "srvkube"
+      hostPath: 
+        path: "/srv/kubernetes"
+    - name: "etcssl"
+      hostPath: 
+        path: "/etc/ssl"
+EOF
+
+cat <<EOF > /etc/kubernetes/manifests/kube-scheduler.yaml
+---
+kind: "Pod"
+apiVersion: "v1"
+metadata:
+  name: "kube-scheduler"
+spec:
+  hostNetwork: true
+  containers:
+    - name: "kube-scheduler"
+      image: "kelseyhightower/kube-scheduler:1.0.2"
+      command: 
+        - "/usr/local/bin/kube-scheduler"
+        - "--address=0.0.0.0"
+        - "--master=http://127.0.0.1:8080"
+      ports:
+        - name: "healthz"
+          hostPort: 10251
+          containerPort: 10251
+      volumeMounts:
+        - name: "srvkube"
+          mountPath: "/srv/kubernetes"
+          readOnly: true
+        - name: "etcssl"
+          mountPath: "/etc/ssl"
+          readOnly: true
+      livenessProbe: 
+        httpGet: 
+          path: "/healthz"
+          port: 10251
+        initialDelaySeconds: 15
+        timeoutSeconds: 15
+  volumes:
+    - name: "srvkube"
+      hostPath:
+        path: "/srv/kubernetes"
+    - name: "etcssl"
+      hostPath:
+        path: "/etc/ssl"
+EOF
+
+# Controller Manager
+cat <<EOF > /etc/kubernetes/manifests/kube-controller-manager.yaml
+---
+kind: "Pod"
+apiVersion: "v1"
+metadata:
+  name: "kube-controller-manager"
+spec:
+  hostNetwork: true
+  containers:
+    - name: "kube-controller-manager"
+      image: "kelseyhightower/kube-controller-manager:1.0.2"
+      command: 
+        - "/usr/local/bin/kube-controller-manager"
+        - "--address=0.0.0.0"
+        - "--master=http://127.0.0.1:8080"
+      ports:
+        - name: "healthz"
+          hostPort: 10252
+          containerPort: 10252
+      livenessProbe: 
+        httpGet: 
+          path: "/healthz"
+          port: 10252
+        initialDelaySeconds: 15
+        timeoutSeconds: 15
+EOF
+
+## Docker
+cat <<EOF > /etc/systemd/system/docker.service
+[Unit]
+Description=Docker Application Container Engine
+Documentation=http://docs.docker.io
+
+[Service]
+ExecStart=/opt/bin/docker --daemon \
+ --bip=10.200.0.1/24 \
+ --iptables=false \
+ --ip-masq=false \
+ --host=unix:///var/run/docker.sock \
+ --storage-driver=overlay
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+## Kubelet
+cat <<EOF > /etc/systemd/system/kubelet.service
+[Unit]
+Description=Kubernetes Kubelet
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+
+[Service]
+ExecStart=/opt/bin/kubelet \
+ --api-servers=http://127.0.0.1:8080 \
+ --cluster-dns=10.200.20.10 \
+ --cluster-domain=cluster.local \
+ --config=/etc/kubernetes/manifests \
+ --v=2
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+## kube-proxy
+
+cat <<EOF > /etc/systemd/system/kube-proxy.service
+[Unit]
+Description=Kubernetes Proxy
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+
+[Service]
+ExecStart=/opt/bin/kube-proxy --master=http://127.0.0.1:8080 --v=2
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+## Start systemd units.
+sleep 2
+systemctl daemon-reload
+systemctl enable docker
+systemctl enable kubelet
+systemctl enable kube-proxy
+systemctl start docker
+systemctl start kubelet
+systemctl start kube-proxy
