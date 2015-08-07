@@ -7,6 +7,8 @@ Then, set the Google Cloud project that you want to use for this lab as the defa
 
 ```
 gcloud config set project <your-project-name>
+gcloud config set zone us-central1-f
+gcloud config set region us-central1
 ```
 
 Note: if you don't yet have a Google Cloud project created, then follow the signup
