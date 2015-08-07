@@ -1,9 +1,14 @@
 # Deploying the Service Proxy
 
-### node1
+Get your project name:
+```
+gcloud config list project
+```
+
+### node0
 
 ```
-gcloud compute ssh node1
+gcloud compute ssh node0
 ```
 
 Download the kube-proxy unit file:
@@ -11,11 +16,6 @@ Download the kube-proxy unit file:
 ```
 sudo curl https://kuar.io/kube-proxy.service \
   -o /etc/systemd/system/kube-proxy.service
-```
-
-Get your project name:
-```
-gcloud config list project
 ```
 
 Edit the kube-proxy unit file and configure the master flag:
@@ -48,18 +48,10 @@ Check iptables
 sudo iptables -vL -n -t nat
 ```
 
-### node2
+### node1
 
 ```
-gcloud compute ssh node2
-```
-
-Repeat the steps from above.
-
-### node3
-
-```
-gcloud compute ssh node3
+gcloud compute ssh node1
 ```
 
 Repeat the steps from above.

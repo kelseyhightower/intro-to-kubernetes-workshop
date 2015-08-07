@@ -43,7 +43,7 @@ gcloud compute ssh node0
 ```
 
 ```
-kubectl rolling-update hello --update-period=3s --image=quay.io/kelseyhightower/hello:2.0.0
+kubectl get pods --watch
 ```
 
 ### Terminal 2
@@ -63,5 +63,5 @@ gcloud compute ssh node0
 ```
 
 ```
-kubectl get pods --watch
+kubectl rolling-update hello --update-period=3s --image=quay.io/kelseyhightower/hello:2.0.0
 ```

@@ -2,10 +2,15 @@
 
 ## Install and configure the Kubelet
 
-### node1
+Get your project name:
+```
+gcloud config list project
+```
+
+### node0
 
 ```
-gcloud compute ssh node1
+gcloud compute ssh node0
 ```
 
 Download the kubelet unit file:
@@ -13,11 +18,6 @@ Download the kubelet unit file:
 ```
 sudo curl https://kuar.io/kubelet.service \
   -o /etc/systemd/system/kubelet.service
-```
-
-Get your project name:
-```
-gcloud config list project
 ```
 
 Edit the kubelet unit file and set the api-server flag:
@@ -44,23 +44,13 @@ Verify:
 sudo systemctl status kubelet
 ```
 
-### node2
+### node1
 
 ```
-gcloud compute ssh node2
-```
-
-Repeat the steps from above.
-
-### node3
-
-```
-gcloud compute ssh node3
+gcloud compute ssh node1
 ```
 
 Repeat the steps from above.
-
-## List registered nodes
 
 ### node0
 
