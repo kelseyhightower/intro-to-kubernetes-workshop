@@ -1,6 +1,12 @@
 # Provisioning CoreOS on Google Compute Engine
 
-Provision 2 CoreOS nodes:
+In this lab you will provision two GCE instances running CoreOS.
+
+## Provision 2 GCE instances
+
+### Provision 2 CoreOS nodes using the gcloud CLI
+
+#### node0
 
 ```
 gcloud compute instances create node0 \
@@ -11,6 +17,8 @@ gcloud compute instances create node0 \
  --can-ip-forward \
  --scopes compute-rw
 ```
+
+#### node1
 
 ```
 gcloud compute instances create node1 \
