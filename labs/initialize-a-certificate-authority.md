@@ -6,6 +6,12 @@ https://github.com/cloudflare/cfssl
 
 ## Download cfssl
 
+### node0
+
+```
+gcloud compute ssh node0
+```
+
 ```
 sudo curl -o /opt/bin/cfssl https://kuar.io/cfssl
 sudo chmod +x /opt/bin/cfssl
