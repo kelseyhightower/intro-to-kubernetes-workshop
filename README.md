@@ -31,8 +31,7 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 
 #### Labs
 
-  * [Install and configure the kubelet](labs/install-and-configure-kubelet.md)
-  * [Install and configure the kubernetes controller pod](labs/kuberentes-controller-pod.md)
+  * [Install and configure the Kubernetes controller](labs/kuberentes-controller-pod.md)
   * [Install and configure the kube-proxy](labs/install-and-configure-kube-proxy.md)
   * [Secure the Kubernetes API](labs/secure-the-kubernetes-api.md)
 
