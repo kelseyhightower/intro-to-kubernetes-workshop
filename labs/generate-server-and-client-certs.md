@@ -2,6 +2,14 @@
 
 ## Generate the kube-apiserver server cert
 
+### node0
+
+```
+gcloud compute ssh node0
+```
+
+Create a CSR for the API server:
+
 ```
 cat <<EOF > apiserver-csr.json
 {
@@ -27,6 +35,8 @@ cat <<EOF > apiserver-csr.json
 }
 EOF
 ```
+
+Generate the API server private key and TLS cert:
 
 ```
 cfssl gencert \
