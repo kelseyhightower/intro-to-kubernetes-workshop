@@ -30,7 +30,7 @@ gcloud compute instances create node1 \
  --scopes compute-rw
 ```
 
-List nodes:
+#### Verify
 
 ```
 gcloud compute instances list
