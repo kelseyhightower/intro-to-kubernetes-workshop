@@ -1,7 +1,8 @@
 # Configuring the Network
 
+In this lab you will configure the network between node0 and node1 to ensure cross host connectivity. You will also ensure containers can communicate across hosts and reach the internet.
 
-### Create Routes
+### Create network routes between Docker on node0 and node1
 
 ```
 gcloud compute routes create default-route-10-200-0-0-24 \
@@ -17,6 +18,7 @@ gcloud compute routes create default-route-10-200-1-0-24 \
 ```
 gcloud compute routes list
 ```
+
 ### Getting Containers Online
 
 ```
