@@ -36,7 +36,35 @@ cat <<EOF > apiserver-csr.json
 EOF
 ```
 
-Generate the API server private key and TLS cert:
+### Customize apiserver-csr.json
+
+Get the PROJECT_ID:
+
+```
+PROJECT_ID=$(curl -H "Metadata-Flavor: Google" \
+  http://metadata.google.internal/computeMetadata/v1/project/project-id)
+```
+
+Get the EXTERNAL_IP:
+
+```
+EXTERNAL_IP=$(curl -H "Metadata-Flavor: Google" \
+  http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip)
+```
+
+Substitute the PROJECT_ID:
+
+```
+sed -i -e "s/PROJECT_ID/${PROJECT_ID}/g;" apiserver-csr.json
+```
+
+Substitute the EXTERNAL_IP:
+
+```
+sed -i -e "s/EXTERNAL_IP/${EXTERNAL_IP}/g;" apiserver-csr.json
+```
+
+### Generate the API server private key and TLS cert
 
 ```
 cfssl gencert \
