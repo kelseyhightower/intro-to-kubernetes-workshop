@@ -10,7 +10,7 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 
 #### Labs
 
-  * [Install the GCE client tools](labs/install-gce-client-tools.md)
+  * [Install GCE client tools](labs/install-gce-client-tools.md)
 
 ### Kubernetes base infrastructure
 

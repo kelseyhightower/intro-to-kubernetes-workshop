@@ -1,4 +1,4 @@
-# Installing the client tools
+# Install GCE client tools
 
 ## Install the Google 'gcloud' SDK
 
