@@ -1,10 +1,8 @@
 # Initialize a certificate authority
 
-The first step in securing Docker and Kubernetes is to set up a PKI infrastructure for managing TLS certificates.
+In this lab you will setup the necessary PKI infrastructure to secure the Kuberentes API for remote communication. This lab will leverage CloudFlare's PKI toolkit, [cfssl](https://github.com/cloudflare/cfssl), to generate TLS certificates.
 
-https://github.com/cloudflare/cfssl
-
-## Download cfssl
+## Download and install cfssl
 
 ### node0
 
@@ -28,6 +26,8 @@ sudo chmod +x /opt/bin/cfssljson
 
 ## Initialize a CA
 
+### Create the CA configuration file
+
 ```
 cat <<EOF > ca-config.json
 {
@@ -50,6 +50,10 @@ cat <<EOF > ca-config.json
 EOF
 ```
 
+### Generate the CA certificate and private key
+
+Create the CA CSR:
+
 ```
 cat <<EOF > ca-csr.json
 {
@@ -70,6 +74,8 @@ cat <<EOF > ca-csr.json
 }
 EOF
 ```
+
+Generate the CA certificate and private key:
 
 ```
 cfssl gencert -initca ca-csr.json | cfssljson -bare ca
