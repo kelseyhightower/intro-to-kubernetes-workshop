@@ -13,6 +13,10 @@ gcloud compute ssh node0
 ```
 
 ```
+sudo mkdir -p /opt/bin
+```
+
+```
 sudo curl -o /opt/bin/cfssl https://kuar.io/cfssl
 sudo chmod +x /opt/bin/cfssl
 ```
