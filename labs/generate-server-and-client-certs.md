@@ -1,5 +1,7 @@
 # Generate Server and Client Certs
 
+In this labs you will use cfssl to generate client and server TLS certs.
+
 ## Generate the kube-apiserver server cert
 
 ### node0
