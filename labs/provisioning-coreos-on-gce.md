@@ -4,7 +4,7 @@ In this lab you will provision two GCE instances running CoreOS.
 
 ## Provision 2 GCE instances
 
-### Provision 2 CoreOS nodes using the gcloud CLI
+### Provision CoreOS using the gcloud CLI
 
 #### node0
 
