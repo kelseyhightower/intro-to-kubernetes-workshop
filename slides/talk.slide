@@ -1,5 +1,4 @@
 Intro to Kubernetes Workshop
-OSCON 2015 - Portland, Oregon 
 
 Kelsey Hightower
 CoreOS
@@ -25,10 +24,8 @@ Kubernetes Infrastructure.
 - CoreOS
 - Docker
 - etcd
-- flannel
 - Kubernetes controller
 - Kubernetes node
-- Terraform
 - Google Compute Engine
 
 * Course Outline
@@ -37,8 +34,6 @@ Client tools.
 
 - ssh
 - gcloud
-- packer
-- terraform
 - kubectl
 
 * Containers
