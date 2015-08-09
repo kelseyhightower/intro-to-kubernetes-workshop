@@ -12,6 +12,12 @@ Next create the service for the UI:
 ./kubectl create -f https://kuar.io/kube-ui-svc.yaml
 ```
 
+Verify:
+
+```
+./kubectl get pods --all-namespaces
+```
+
 At this point the Kubernetes UI add-on should be up and running. The Kubernetes API server provides access to the UI via the /ui endpoint.
 
 ```
