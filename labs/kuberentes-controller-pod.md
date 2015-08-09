@@ -53,7 +53,7 @@ sudo mkdir -p /var/lib/etcd
 Copy certs
 
 ```
-sudo cp admin-key.pem admin.pem ca.pem /var/run/kubernetes/
+sudo cp apiserver-key.pem apiserver.pem ca.pem /var/run/kubernetes/
 ```
 
 Download the controller pod manifest:

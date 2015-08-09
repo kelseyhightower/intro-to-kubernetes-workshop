@@ -1,6 +1,8 @@
 # Install and configure the kubectl CLI
 
-### Install kubectl
+## Install kubectl
+
+### laptop
 
 #### Linux
 
@@ -60,6 +62,10 @@ Configure the workshop context:
 
 ```
 ./kubectl config use-context workshop
+```
+
+```
+./kubectl config view
 ```
 
 ### Explore the kubectl CLI
