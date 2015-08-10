@@ -18,15 +18,15 @@ kubectl get pods
 ## Creating Pods
 
 ```
-kubectl run hello \
-  --labels="app=hello,track=stable" \
-  --image=quay.io/kelseyhightower/hello:1.0.0
+kubectl run inspector \
+  --labels="app=inspector,track=stable" \
+  --image=b.gcr.io/kuar/inspector:1.0.0
 ```
 
 ## Get Pod info
 
 ```
-kubectl describe pods hello
+kubectl describe pods inspector
 ```
 
 ## Visit the running service
@@ -34,7 +34,7 @@ kubectl describe pods hello
 Grab the `IP` address for the pod
 
 ```
-kubectl describe pods hello
+kubectl describe pods inspector
 ```
 
 ```
