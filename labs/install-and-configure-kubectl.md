@@ -9,6 +9,7 @@
 ```
 curl -o kubectl https://kuar.io/linux/kubectl
 chmod +x kubectl
+sudo cp kubectl /usr/local/bin/kubectl
 ```
 
 #### OS X
@@ -16,6 +17,7 @@ chmod +x kubectl
 ```
 curl -o kubectl https://kuar.io/darwin/kubectl
 chmod +x kubectl
+sudo cp kubectl /usr/local/bin/kubectl
 ```
 
 ### Configure kubectl
@@ -37,7 +39,7 @@ gcloud compute instances list
 Create the workshop cluster config:
 
 ```
-./kubectl config set-cluster workshop \
+kubectl config set-cluster workshop \
 --certificate-authority=ca.pem \
 --embed-certs=true \
 --server=https://EXTERNAL_IP:6443
@@ -46,7 +48,7 @@ Create the workshop cluster config:
 Add the admin user credentials:
 
 ```
-./kubectl config set-credentials admin \
+kubectl config set-credentials admin \
 --client-key=admin-key.pem \
 --client-certificate=admin.pem \
 --embed-certs=true
@@ -55,17 +57,17 @@ Add the admin user credentials:
 Configure the workshop context:
 
 ```
-./kubectl config set-context workshop \
+kubectl config set-context workshop \
 --cluster=workshop \
 --user=admin
 ```
 
 ```
-./kubectl config use-context workshop
+kubectl config use-context workshop
 ```
 
 ```
-./kubectl config view
+kubectl config view
 ```
 
 ### Explore the kubectl CLI
@@ -73,23 +75,23 @@ Configure the workshop context:
 Check the health status of the cluster components:
 
 ```
-./kubectl get cs
+kubectl get cs
 ```
 
 List pods:
 
 ```
-./kubectl get pods
+kubectl get pods
 ```
 
 List nodes:
 
 ```
-./kubectl get nodes
+kubectl get nodes
 ```
 
 List services:
 
 ```
-./kubectl get services
+kubectl get services
 ```
