@@ -14,9 +14,9 @@ gcloud compute instances create nginx \
 
 ### Prep 
 
-Get your project name:
 ```
 gcloud config list project
+gcloud compute instances list
 ```
 
 Edit etcd hosts on your local machine.
