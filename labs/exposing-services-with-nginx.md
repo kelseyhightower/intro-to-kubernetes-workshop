@@ -26,7 +26,7 @@ sudo vim /etc/hosts
 ```
 
 ```
-NGINX_EXTERNAL_IP hello.PROJECT_NAME.io
+NGINX_EXTERNAL_IP inspector.PROJECT_ID.io
 ```
 
 ### Configure nginx
@@ -42,13 +42,22 @@ git clone https://github.com/kelseyhightower/intro-to-kubernetes-workshop.git
 Review the nginx vhost configuration:
 
 ```
-cat intro-to-kubernetes-workshop/nginx/hello.conf
+cat intro-to-kubernetes-workshop/nginx/inspector.conf
 ```
 
 Substitute the project name:
 
 ```
-sed -i -e 's/PROJECT_NAME/kuarlab/g;' intro-to-kubernetes-workshop/nginx/hello.conf
+PROJECT_ID=$(curl -H "Metadata-Flavor: Google" \
+  http://metadata.google.internal/computeMetadata/v1/project/project-id)
+```
+
+```
+sed -i -e "s/PROJECT_NAME/${PROJECT_ID}/g;" intro-to-kubernetes-workshop/nginx/inspector.conf
+```
+
+```
+cat intro-to-kubernetes-workshop/nginx/inspector.conf
 ```
 
 Copy the vhost configuration:
@@ -58,7 +67,7 @@ sudo mkdir -p /etc/nginx/conf.d
 ```
 
 ```
-sudo cp intro-to-kubernetes-workshop/nginx/hello.conf  /etc/nginx/conf.d/
+sudo cp intro-to-kubernetes-workshop/nginx/inspector.conf  /etc/nginx/conf.d/
 ```
 
 ### Start nginx
@@ -80,5 +89,5 @@ gcloud compute firewall-rules create default-allow-nginx --allow tcp:80
 Visit 
 
 ```
-http://hello.PROJECT_NAME.io
+http://inspector.PROJECT_ID.io
 ```
