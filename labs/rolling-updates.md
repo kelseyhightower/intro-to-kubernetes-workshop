@@ -19,7 +19,8 @@ Try hitting the service port on any of the knode instances.
 #### laptop
 
 ```
-while true; do curl http://inspector.PROJECT_ID.io; echo; sleep 1; done
+while true; do curl -s http://inspector.PROJECT_ID.io | \
+  grep -o -e 'Version: Inspector [0-9].[0-9].[0-9]'; sleep 1; done
 ```
 
 Did you find the canary?
@@ -41,7 +42,8 @@ Open three terminals
 #### laptop
 
 ```
-while true; do curl http://inspector.PROJECT_ID.io; echo; sleep 1; done
+while true; do curl -s http://inspector.PROJECT_ID.io | \
+  grep -o -e 'Version: Inspector [0-9].[0-9].[0-9]'; sleep 1; done
 ```
 
 ### Terminal 3
