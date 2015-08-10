@@ -1,7 +1,0 @@
-{{range .items}}
-{{.metadata.name}}
-   PodIP: {{.status.podIP}}
-   Containers:
-      Name{{printf "\t\t"}}Image{{printf "\t\t"}}Running{{ range .status.containerStatuses}}
-      {{.name}}{{printf "\t\t"}}{{.image}}{{printf "\t"}}{{.ready}}{{end}}
-{{end}}

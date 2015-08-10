@@ -20,24 +20,24 @@ kubectl get services
 ## Creating Services
 
 ```
-cat intro-to-kubernetes-workshop/kubernetes-configs/hello-svc.yaml
+cat intro-to-kubernetes-workshop/kubernetes-configs/inspector-svc.yaml
 ```
 
 ```
-kubectl create -f intro-to-kubernetes-workshop/kubernetes-configs/hello-svc.yaml
+kubectl create -f intro-to-kubernetes-workshop/kubernetes-configs/inspector-svc.yaml
 ```
 
 ## Validation
 ```
-kubectl describe service hello
+kubectl describe service inspector
 ```
 
-## Create Hello firewall rule
+## Create the inspector firewall rule
 
 ### laptop
 
 ```
-gcloud compute firewall-rules create default-allow-hello --allow tcp:36000
+gcloud compute firewall-rules create default-allow-inspector --allow tcp:36000
 ```
 
 Try hitting the external IP address for each instance in your web browser on port 36000
