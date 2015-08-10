@@ -31,19 +31,19 @@ vim skydns-rc.yaml
 Create the SkyDNS replication controller:
 
 ```
-/opt/bin/kubectl create -f skydns-rc.yaml
+./kubectl create -f skydns-rc.yaml
 ```
 
 Next create the SkyDNS service:
 
 ```
-/opt/bin/kubectl create -f https://kuar.io/skydns-svc.yaml
+./kubectl create -f https://kuar.io/skydns-svc.yaml
 ```
 
 ### Validate
 
 ```
-/opt/bin/kubectl get rc --all-namespaces
+./kubectl get rc --all-namespaces
 ```
 
 Test DNS lookups
@@ -57,13 +57,13 @@ cat busybox.yaml
 ```
 
 ```
-/opt/bin/kubectl create -f busybox.yaml
+./kubectl create -f busybox.yaml
 ```
 
 ```
-/opt/bin/kubectl get pods busybox
+./kubectl get pods busybox
 ```
 
 ```
-/opt/bin/kubectl exec busybox -- nslookup kubernetes
+./kubectl exec busybox -- nslookup kubernetes
 ```
