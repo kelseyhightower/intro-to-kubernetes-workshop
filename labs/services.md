@@ -3,21 +3,19 @@
 * Create a service using the kubectl cli tool
 * Map a service to pod lables
 
-```
-gcloud compute ssh node0
-```
+### laptop
 
 ```
 git clone https://github.com/kelseyhightower/intro-to-kubernetes-workshop.git
 ```
 
-## Listing Services
+### Listing Services
 
 ```
 kubectl get services
 ```
 
-## Creating Services
+### Creating Services
 
 ```
 cat intro-to-kubernetes-workshop/kubernetes-configs/inspector-svc.yaml
@@ -27,14 +25,14 @@ cat intro-to-kubernetes-workshop/kubernetes-configs/inspector-svc.yaml
 kubectl create -f intro-to-kubernetes-workshop/kubernetes-configs/inspector-svc.yaml
 ```
 
-## Validation
+#### Validation
 ```
 kubectl describe service inspector
 ```
 
 ## Create the inspector firewall rule
 
-### laptop
+#### laptop
 
 ```
 gcloud compute firewall-rules create default-allow-inspector --allow tcp:36000
