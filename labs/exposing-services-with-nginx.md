@@ -22,11 +22,7 @@ gcloud compute instances list
 Edit etcd hosts on your local machine.
 
 ```
-sudo vim /etc/hosts
-```
-
-```
-NGINX_EXTERNAL_IP inspector.PROJECT_ID.io
+sudo echo "NGINX_EXTERNAL_IP inspector.PROJECT_ID.io" >> /etc/hosts
 ```
 
 ### Configure nginx
