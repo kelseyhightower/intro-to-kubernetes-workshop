@@ -49,7 +49,7 @@ PROJECT_ID=$(curl -H "Metadata-Flavor: Google" \
 ```
 
 ```
-sed -i -e "s/PROJECT_NAME/${PROJECT_ID}/g;" intro-to-kubernetes-workshop/nginx/inspector.conf
+sed -i -e "s/PROJECT_ID/${PROJECT_ID}/g;" intro-to-kubernetes-workshop/nginx/inspector.conf
 ```
 
 ```
