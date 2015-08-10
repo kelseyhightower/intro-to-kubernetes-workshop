@@ -25,7 +25,7 @@ kubectl get pods
 ### Resize the replication controller
 
 ```
-kubectl scale rc hello --replicas=10
+kubectl scale rc inspector --replicas=10
 ```
 
 ```
