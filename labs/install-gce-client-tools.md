@@ -6,7 +6,7 @@ Follow the instructions [here](https://cloud.google.com/sdk/) to install gcloud.
 Then, set the Google Cloud project that you want to use for this lab as the default, by running:
 
 ```
-gcloud config set project <your-project-name>
+gcloud config set project <your-project-id>
 gcloud config set compute/zone us-central1-f
 gcloud config set compute/region us-central1
 ```
