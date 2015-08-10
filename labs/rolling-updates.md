@@ -6,7 +6,7 @@
 ## Send the Canary
 
 ```
-./kubectl run inspector-canary \
+kubectl run inspector-canary \
   --labels="app=inspector,track=canary" \
   --replicas=1 \
   --image=b.gcr.io/kuar/inspector:2.0.0
@@ -34,7 +34,7 @@ Open three terminals
 #### laptop
 
 ```
-./kubectl get pods --watch
+kubectl get pods --watch
 ```
 
 ### Terminal 2
@@ -51,5 +51,5 @@ while true; do curl -s http://inspector.PROJECT_ID.io | \
 #### laptop
 
 ```
-./kubectl rolling-update inspector --update-period=3s --image=b.gcr.io/kuar/inspector:2.0.0
+kubectl rolling-update inspector --update-period=3s --image=b.gcr.io/kuar/inspector:2.0.0
 ```
