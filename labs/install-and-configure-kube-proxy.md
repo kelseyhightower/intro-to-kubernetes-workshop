@@ -39,7 +39,7 @@ Verify:
 docker ps
 ```
 
-Check iptables
+Check iptables (search for rules with 'kubernetes' comments):
 
 ```
 sudo iptables -vL -n -t nat

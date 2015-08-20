@@ -87,3 +87,9 @@ Visit
 ```
 http://inspector.PROJECT_ID.io
 ```
+
+Every page refresh should show different MAC and IP address:
+
+```
+http://inspector.PROJECT_ID.io/net
+```

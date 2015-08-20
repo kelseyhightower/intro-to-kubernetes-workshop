@@ -39,3 +39,9 @@ sudo systemctl start kubelet
 ```
 sudo systemctl status kubelet
 ```
+
+#### laptop
+
+```
+kubectl get nodes
+```
