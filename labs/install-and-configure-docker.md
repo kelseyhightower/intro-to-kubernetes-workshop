@@ -1,26 +1,34 @@
 ## Install and configure Docker
 
-In this lab you will install and configure Docker on node0 and node1.
+In this lab you will install and configure Docker.
 
 ### nodeX
 
 ```
-ssh core@<nodeX_ip_address>
+ssh core@nodeX
 ```
 
 #### Download and configure the docker unit file
 
 ```
-sudo curl https://kuar.io/docker.service -o /etc/systemd/system/docker.service
+sudo curl https://kuar.io/docker.service -o docker.service
 ```
 
-Set the `--bip` flag to `10.200.0.1/24`:
+Set the `--bip` flag to `10.200.X.1/24`, where X == node number. For example 
 
 ```
-sudo sed -i -e "s/BRIDGE_IP/10.200.0.1\/24/g;" /etc/systemd/system/docker.service
+node80 = 10.200.80.1/24
+```
+
+```
+sudo sed -i -e "s/BRIDGE_IP/10.200.X.1\/24/g;" docker.service
 ```
 ```
-cat /etc/systemd/system/docker.service
+cat docker.service
+```
+
+```
+sudo mv docker.service /etc/systemd/system/docker
 ```
 
 Start docker:
