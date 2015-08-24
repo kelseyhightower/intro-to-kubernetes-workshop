@@ -30,11 +30,7 @@ scp core@nodeX:~/admin.pem .
 scp core@nodeX:~/ca.pem .
 ``` 
 
-Get the Kubernetes controller external IP:
-
-```
-gcloud compute instances list
-```
+Get the Kubernetes controller external IP.
 
 Create the workshop cluster config:
 
@@ -42,7 +38,7 @@ Create the workshop cluster config:
 kubectl config set-cluster workshop \
 --certificate-authority=ca.pem \
 --embed-certs=true \
---server=https://EXTERNAL_IP:6443
+--server=https://CONTROLLER_NODE_EXTERNAL_IP:6443
 ```
 
 Add the admin user credentials:
