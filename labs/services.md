@@ -30,20 +30,6 @@ kubectl create -f intro-to-kubernetes-workshop/kubernetes-configs/inspector-svc.
 kubectl describe service inspector
 ```
 
-## Create the inspector firewall rule
-
-#### laptop
-
-```
-gcloud compute firewall-rules create default-allow-inspector --allow tcp:36000
-```
-
-Try hitting the external IP address for each instance in your web browser on port 36000
-
-```
-gcloud compute instances list
-```
-
 ```
 curl EXTERNAL_IP_ADDRESS:36000
 ```
