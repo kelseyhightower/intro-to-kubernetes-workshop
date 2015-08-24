@@ -1,5 +1,7 @@
 # Install and configure the Kubelet
 
+In this lab you will install the Kubelet on each worker node in your cluster.
+
 ## nodeX
 
 ```
