@@ -69,11 +69,3 @@ Verify:
 ```
 docker ps
 ```
-
-### Allow external access to the API server secure port
-
-```
-gcloud compute firewall-rules create default-allow-kubernetes-secure \
-  --allow tcp:6443 \
-  --source-ranges 0.0.0.0/0
-```
