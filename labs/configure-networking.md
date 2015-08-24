@@ -1,6 +1,6 @@
 # Configuring the Network
 
-In this lab you will configure the network between node0 and node1 to ensure cross host connectivity. You will also ensure containers can communicate across hosts and reach the internet.
+In this lab you will configure the network between hosts to ensure cross host connectivity. You will also ensure containers can communicate across hosts and reach the internet.
 
 ### Getting Containers Online
 
