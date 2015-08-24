@@ -53,5 +53,6 @@ sudo systemctl stop docker
 sudo ifconfig docker0 down
 sudo brctl delbr docker0
 sudo mv /etc/systemd/system/docker /etc/systemd/system/docker.service
+sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
