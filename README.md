@@ -51,7 +51,6 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * [Creating and managing pods](labs/pods.md)
   * [Creating and managing replication controllers](labs/replication-controllers.md)
   * [Creating and managing services](labs/services.md)
-  * [Exposing services with nginx](labs/exposing-services-with-nginx.md)
   * [Rolling updates](labs/rolling-updates.md)
 
 ### Cluster Add-ons
@@ -67,7 +66,6 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
   * [Docker](https://docs.docker.com)
   * [CoreOS](https://coreos.com)
   * [etcd](https://coreos.com/docs/distributed-configuration/getting-started-with-etcd)
-  * [nginx](http://nginx.org)
 
 ### Tips
 
