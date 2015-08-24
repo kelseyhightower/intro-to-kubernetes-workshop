@@ -8,8 +8,6 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 
 ### Google Compute Engine (GCE)
 
-#### Labs
-
 ### Kubernetes base infrastructure
 
 #### Labs
