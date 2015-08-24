@@ -17,11 +17,11 @@ sudo curl https://kuar.io/kubelet-basic.service \
   -o /etc/systemd/system/kubelet.service
 ```
 
+Configure the api-servers flag:
+
 ```
 export CONTROLLER_NODE_HOSTNAME=`hostname`
 ```
-
-Configure the api-servers flag:
 
 ```
 sudo sed -i -e "s/CONTROLLER_NODE_HOSTNAME/${CONTROLLER_NODE_HOSTNAME}/g;" /etc/systemd/system/kubelet.service
