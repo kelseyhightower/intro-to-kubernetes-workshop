@@ -28,7 +28,7 @@ cat docker.service
 ```
 
 ```
-sudo mv docker.service /etc/systemd/system/docker
+sudo mv docker.service /etc/systemd/system/docker.service
 ```
 
 Start docker:
