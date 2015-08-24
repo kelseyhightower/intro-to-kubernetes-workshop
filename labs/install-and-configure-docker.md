@@ -45,3 +45,11 @@ sudo systemctl start docker
 ifconfig
 docker version
 ```
+
+#### Fix broken docker
+
+```
+sudo systemctl stop docker
+sudo ifconfig docker0 down
+sudo brctl delbr docker0
+```
