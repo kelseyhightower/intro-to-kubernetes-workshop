@@ -2,10 +2,10 @@
 
 In this lab you will install and configure Docker on node0 and node1.
 
-### node00X
+### nodeX
 
 ```
-ssh core@
+ssh core@<nodeX_ip_address>
 ```
 
 #### Download and configure the docker unit file
