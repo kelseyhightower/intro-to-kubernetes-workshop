@@ -9,28 +9,27 @@ gcloud compute ssh node0
 Download the kube-proxy pod:
 
 ```
-sudo curl -O https://kuar.io/kube-proxy-pod.yaml
+sudo curl -O https://kuar.io/kube-proxy-basic-pod.yaml
 ```
 
 Configure the master flag:
 
 ```
-PROJECT_ID=$(curl -H "Metadata-Flavor: Google" \
-  http://metadata.google.internal/computeMetadata/v1/project/project-id)
+export CONTROLLER_NODE_HOSTNAME="your controller node hostname"
 ```
 
 ```
-sudo sed -i -e "s/PROJECT_ID/${PROJECT_ID}/g;" kube-proxy-pod.yaml
+sudo sed -i -e "s/CONTROLLER_NODE_HOSTNAME/${CONTROLLER_NODE_HOSTNAME}/g;" kube-proxy-basic-pod.yaml
 ```
 
 ```
-cat kube-proxy-pod.yaml
+cat kube-proxy-basic-pod.yaml
 ```
 
 Start the kube-proxy service:
 
 ```
-sudo cp kube-proxy-pod.yaml /etc/kubernetes/manifests
+sudo mv kube-proxy-basic-pod.yaml /etc/kubernetes/manifests/kube-proxy-pod.yaml
 ```
 
 Verify:
@@ -45,10 +44,4 @@ Check iptables
 sudo iptables -vL -n -t nat
 ```
 
-### node1
-
-```
-gcloud compute ssh node1
-```
-
-Repeat the steps from above.
+Repeat the steps from above on the other nodes.
