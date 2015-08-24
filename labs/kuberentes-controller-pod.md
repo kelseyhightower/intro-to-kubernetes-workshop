@@ -2,28 +2,29 @@
 
 ## Install and configure the Kubelet
 
-### node0
+### Controller Node
+
+Pick one of the three nodes to be the controller
 
 ```
-gcloud compute ssh node0
+ssh core@nodeX
 ```
 
 Download the kubelet unit file:
 
 ```
-sudo curl https://kuar.io/kubelet.service \
+sudo curl https://kuar.io/kubelet-basic.service \
   -o /etc/systemd/system/kubelet.service
+```
+
+```
+export CONTROLLER_NODE_HOSTNAME=`hostname`
 ```
 
 Configure the api-servers flag:
 
 ```
-PROJECT_ID=$(curl -H "Metadata-Flavor: Google" \
-  http://metadata.google.internal/computeMetadata/v1/project/project-id)
-```
-
-```
-sudo sed -i -e "s/PROJECT_ID/${PROJECT_ID}/g;" /etc/systemd/system/kubelet.service
+sudo sed -i -e "s/CONTROLLER_NODE_HOSTNAME/${CONTROLLER_NODE_HOSTNAME}/g;" /etc/systemd/system/kubelet.service
 ```
 
 ```
