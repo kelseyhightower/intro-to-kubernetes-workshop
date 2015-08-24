@@ -2,6 +2,21 @@
 
 ### laptop
 
+Create a new namespace:
+
+```
+cat <<EOF > kube-system-ns.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kube-system
+EOF
+```
+
+```
+kubectl create -f kube-system-ns.yaml
+```
+
 ```
 kubectl create -f https://kuar.io/kube-ui-rc.yaml
 ```
