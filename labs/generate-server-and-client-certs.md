@@ -4,10 +4,10 @@ In this labs you will use cfssl to generate client and server TLS certs.
 
 ## Generate the kube-apiserver server cert
 
-### node0
+### Controller Node
 
 ```
-gcloud compute ssh node0
+ssh core@nodeX
 ```
 
 Create a CSR for the API server:
