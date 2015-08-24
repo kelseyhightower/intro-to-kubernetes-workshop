@@ -7,7 +7,7 @@ In this lab you will setup the necessary PKI infrastructure to secure the Kubere
 ### node0
 
 ```
-gcloud compute ssh node0
+ssh core@nodeX
 ```
 
 ```
