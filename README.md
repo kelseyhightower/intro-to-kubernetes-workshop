@@ -10,13 +10,10 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 
 #### Labs
 
-  * [Install GCE client tools](labs/install-gce-client-tools.md)
-
 ### Kubernetes base infrastructure
 
 #### Labs
 
-  * [Provision CoreOS Cluster](labs/provisioning-coreos-on-gce.md)
   * [Install and configure Docker](labs/install-and-configure-docker.md)
   * [Configure Networking](labs/configure-networking.md)
 
