@@ -1,9 +1,9 @@
 # Install and configure the kube-proxy
 
-## node0
+## nodeX
 
 ```
-gcloud compute ssh node0
+ssh core@nodeX
 ```
 
 Download the kube-proxy pod:
