@@ -4,7 +4,7 @@ In this lab you will setup the necessary PKI infrastructure to secure the Kubere
 
 ## Download and install cfssl
 
-### node0
+Pick one of the three nodes to be the controller node.
 
 ```
 ssh core@nodeX
