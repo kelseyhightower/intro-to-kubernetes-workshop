@@ -1,5 +1,7 @@
 # Install and configure the kube-proxy
 
+In this lab you will install the kube-proxy on each node in your Kubernetes cluster.
+
 ## nodeX
 
 ```
