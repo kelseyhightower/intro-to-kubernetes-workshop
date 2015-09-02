@@ -9,12 +9,31 @@
 kubectl run inspector-canary \
   --labels="app=inspector,track=canary" \
   --replicas=1 \
-  --image=b.gcr.io/kuar/inspector:2.0.0
+  --image=b.gcr.io/kuar/inspector:2.0.0 \
+  --overrides='{
+  "apiVersion": "v1",
+  "spec": {
+    "template": {
+      "spec": {
+        "containers": [
+          {
+            "args": [
+              "-insecure-host=0.0.0.0",
+              "-insecure-port=80"
+            ],
+            "image": "b.gcr.io/kuar/inspector:2.0.0",
+            "name": "inspector-canary"
+          }
+        ]
+      }
+    }
+  }
+}'
 ```
 
 ### Validation
 
-Try hitting the service port on any of the knode instances.
+Try hitting the service port on any of the node instances.
 
 #### laptop
 

@@ -2,6 +2,14 @@
 
 ### laptop
 
+Create `kube-system` namespace:
+
+```
+kubectl create -f https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/saltbase/salt/kube-addons/namespace.yaml
+```
+
+Spawn `kube-ui` Replication Controller:
+
 ```
 kubectl create -f https://kuar.io/kube-ui-rc.yaml
 ```
