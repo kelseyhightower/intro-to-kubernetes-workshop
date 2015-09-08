@@ -2,6 +2,15 @@
 
 In this lab you will install and configure Docker on node0 and node1.
 
+### Copy Docker unit file
+
+```
+gcloud compute copy-files units/docker.service node0:~/
+```
+```
+gcloud compute copy-files units/docker.service node1:~/
+```
+
 ### node0
 
 ```
