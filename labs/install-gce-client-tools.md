@@ -17,3 +17,31 @@ instructions [here](https://cloud.google.com/compute/docs/signup).
 Grab the service account docs from here:
 
 [Google Service Account Docs](https://developers.google.com/console/help/new/#serviceaccounts)
+
+## Verify your account is setup correctly
+
+Run the following commands to make sure your GCE account is setup:
+
+Create a VM named `workshop-test`
+
+```
+gcloud compute instances create workshop-test \
+ --image-project coreos-cloud \
+ --image coreos-alpha-794-0-0-v20150903 \
+ --boot-disk-size 200GB \
+ --machine-type n1-standard-1 \
+ --can-ip-forward \
+ --scopes compute-rw
+```
+
+List all VMs:
+
+```
+gcloud compute instances list
+```
+
+Delete the `workshop-test` VM:
+
+```
+gcloud compute instances delete workshop-test
+```
