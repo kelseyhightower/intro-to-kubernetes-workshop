@@ -21,19 +21,24 @@ gcloud compute copy-files units/docker.service node1:~/
 gcloud compute ssh node0
 ```
 
-#### Download and configure the docker unit file
+Configure the docker unit file
 
-```
-sudo curl https://kuar.io/docker.service -o /etc/systemd/system/docker.service
-```
-
-Set the `--bip` flag to `10.200.0.1/24` (docker0 interface address which will be used by docker daemon):
+Set the `--bip` flag to `10.200.0.1/24`:
 
 ```
 sudo sed -i -e "s/BRIDGE_IP/10.200.0.1\/24/g;" /etc/systemd/system/docker.service
 ```
+
+Review the docker unit file.
+
 ```
-cat /etc/systemd/system/docker.service
+cat docker.service
+```
+
+Copy the docker unit file into place.
+
+```
+sudo mv docker.service /etc/systemd/system/docker.service
 ```
 
 Start docker:
