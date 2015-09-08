@@ -4,7 +4,7 @@ In this lab you will install and configure Docker on node0 and node1.
 
 ### Copy Docker systemd unit file
 
-Docker will run under systemd on each of the nodes. Copy the docker.service unit file each node.
+Docker will run under systemd. Copy the docker.service unit file each node.
 
 ```
 gcloud compute copy-files units/docker.service node0:~/
