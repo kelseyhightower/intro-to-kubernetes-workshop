@@ -2,23 +2,36 @@
 
 In this lab you will install and configure Docker on node0 and node1.
 
-## Copy Docker systemd unit file
-
-Docker will run under systemd. Copy the docker.service unit file each node.
-
-```
-gcloud compute copy-files units/docker.service node0:~/
-```
-```
-gcloud compute copy-files units/docker.service node1:~/
-```
-
 ## Configure the Docker Engine
 
 ### node0
 
 ```
 gcloud compute ssh node0
+```
+
+### Create the docker systemd unit file
+
+```
+cat <<'EOF' > docker.service
+[Unit]
+Description=Docker Application Container Engine
+Documentation=http://docs.docker.io
+
+[Service]
+ExecStart=/usr/bin/docker --daemon \
+  --bip=BRIDGE_IP \
+  --iptables=false \
+  --ip-masq=false \
+  --host=unix:///var/run/docker.sock \
+  --log-level=error \
+  --storage-driver=overlay
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+EOF
 ```
 
 Configure the docker unit file
@@ -63,6 +76,30 @@ docker version
 
 ```
 gcloud compute ssh node1
+```
+
+### Create the docker systemd unit file
+
+```
+cat <<'EOF' > docker.service
+[Unit]
+Description=Docker Application Container Engine
+Documentation=http://docs.docker.io
+
+[Service]
+ExecStart=/usr/bin/docker --daemon \
+  --bip=BRIDGE_IP \
+  --iptables=false \
+  --ip-masq=false \
+  --host=unix:///var/run/docker.sock \
+  --log-level=error \
+  --storage-driver=overlay
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+EOF
 ```
 
 Configure the docker unit file
