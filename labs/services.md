@@ -51,9 +51,11 @@ gcloud compute firewall-rules create default-allow-inspector --allow tcp:36000
 Try hitting the external IP address for each instance in your web browser on port 36000
 
 ```
-gcloud compute instances list
+EXTERNAL_IP=$(gcloud compute ssh node0 --command \
+  "curl -H 'Metadata-Flavor: Google' \
+   http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip")
 ```
 
 ```
-curl EXTERNAL_IP_ADDRESS:36000
+curl http://${EXTERNAL_IP}:36000
 ```
