@@ -51,6 +51,10 @@ cat kubelet.service
 Start the kubelet service:
 
 ```
+sudo mv kubelet.service /etc/systemd/system/
+```
+
+```
 sudo systemctl daemon-reload
 sudo systemctl enable kubelet
 sudo systemctl start kubelet
