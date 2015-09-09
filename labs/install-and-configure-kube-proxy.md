@@ -9,45 +9,7 @@ gcloud compute ssh node0
 ## Create the kube-proxy pod
 
 ```
-cat <<EOF > kube-proxy-pod.yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: kube-proxy
-  version: 1.0.4
-spec:
-  hostNetwork: true
-  volumes:
-    - name: "etc-kubernetes"
-      hostPath:
-        path: "/etc/kubernetes"
-    - name: "ssl-certs"
-      hostPath:
-        path: "/usr/share/ca-certificates"
-    - name: "usr"
-      hostPath:
-        path: "/usr"
-    - name: "lib64"
-      hostPath:
-        path: "/lib64"
-  containers:
-    - name: "kube-proxy"
-      image: "b.gcr.io/kuar/kube-proxy:1.0.4"
-      args:
-        - "--master=http://node0.c.PROJECT_ID.internal:8080"
-        - "--v=2"
-      securityContext:
-        privileged: true
-      volumeMounts:
-        - mountPath: /etc/kubernetes
-          name: "etc-kubernetes"
-        - mountPath: /etc/ssl/certs
-          name: "ssl-certs"
-        - mountPath: /usr
-          name: "usr"
-        - mountPath: /lib64
-          name: "lib64"
-EOF
+curl -O https://storage.googleapis.com/configs.kuar.io/kube-proxy-pod.yaml
 ```
 
 Configure the master flag:
