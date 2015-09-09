@@ -29,6 +29,6 @@ kubectl scale rc inspector --replicas=10
 ```
 
 ```
-kubectl get pods --watch
+kubectl get pods --watch-only
 ```
 
