@@ -40,7 +40,7 @@ Open three terminals
 #### laptop
 
 ```
-kubectl get pods --watch
+kubectl get pods --watch-only
 ```
 
 ### Terminal 2
