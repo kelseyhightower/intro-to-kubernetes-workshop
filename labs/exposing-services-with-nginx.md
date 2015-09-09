@@ -15,14 +15,21 @@ gcloud compute instances create nginx \
 ### Prep 
 
 ```
-gcloud config list project
-gcloud compute instances list
+NGINX_EXTERNAL_IP=$(gcloud compute ssh nginx --command \
+  "curl -H 'Metadata-Flavor: Google' \
+   http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip")
+```
+
+```
+PROJECT_ID=$(gcloud compute ssh nginx --command \
+  "curl -H 'Metadata-Flavor: Google' \
+  http://metadata.google.internal/computeMetadata/v1/project/project-id")
 ```
 
 Edit etcd hosts on your local machine.
 
 ```
-sudo bash -c 'echo "NGINX_EXTERNAL_IP inspector.PROJECT_ID.io" >> /etc/hosts'
+sudo bash -c 'echo "${NGINX_EXTERNAL_IP} inspector.${PROJECT_ID}.io" >> /etc/hosts'
 ```
 
 ### Configure nginx
