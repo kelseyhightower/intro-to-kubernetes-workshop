@@ -12,11 +12,7 @@ kubectl get services
 ### Creating Services
 
 ```
-curl -O https://storage.googleapis.com/configs.kuar.io/inspector-svc.yaml
-```
-
-```
-kubectl create -f inspector-svc.yaml
+kubectl create -f https://storage.googleapis.com/configs.kuar.io/inspector-svc.yaml
 ```
 
 #### Validation
