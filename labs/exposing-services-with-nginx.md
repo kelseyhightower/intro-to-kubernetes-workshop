@@ -1,6 +1,6 @@
 # Exposing Services with Nginx
 
-### Provision nginx
+### Provision the nginx VM
 
 ```
 gcloud compute instances create nginx \
