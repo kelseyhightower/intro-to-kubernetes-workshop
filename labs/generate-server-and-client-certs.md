@@ -66,6 +66,12 @@ Substitute the EXTERNAL_IP:
 sed -i -e "s/EXTERNAL_IP/${EXTERNAL_IP}/g;" apiserver-csr.json
 ```
 
+Review the apiserver CSR:
+
+```
+cat apiserver-csr.json
+```
+
 ### Generate the API server private key and TLS cert
 
 ```

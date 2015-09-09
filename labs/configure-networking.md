@@ -21,6 +21,14 @@ gcloud compute routes create default-route-10-200-1-0-24 \
 gcloud compute routes list
 ```
 
+## Allow external access to the API server secure port
+
+```
+gcloud compute firewall-rules create default-allow-kubernetes-secure \
+  --allow tcp:6443 \
+  --source-ranges 0.0.0.0/0
+``` 
+
 ## Getting Containers Online
 
 By default GCE will not route traffic to the internet for the container subnet. In this section we will configure NAT to workaround the issue.
