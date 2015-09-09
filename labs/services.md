@@ -12,23 +12,7 @@ kubectl get services
 ### Creating Services
 
 ```
-cat <<EOF > inspector-svc.yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: inspector
-  labels:
-    app: inspector
-spec:
-  type: NodePort
-  selector:
-    app: inspector
-  ports:
-  - name: http
-    nodePort: 36000
-    port: 80
-    protocol: TCP
-EOF
+curl -O https://storage.googleapis.com/configs.kuar.io/inspector-svc.yaml
 ```
 
 ```
