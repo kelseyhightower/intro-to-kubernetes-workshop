@@ -1,14 +1,8 @@
-{
-    "kind": "Node",
-    "apiVersion": "v1beta3",
-    "metadata": {
-        "name": "192.168.12.100",
-        "labels": {
-            "environment": "production",
-            "name": "node0"
-        }
-    },
-    "spec": {
-        "externalID": "192.168.12.100"
-    }
-}
+apiVersion: v1
+kind: Node
+metadata:
+  labels:
+    kubernetes.io/hostname: node0.c.kubernetes-up-and-running.internal
+  name: node0.c.kubernetes-up-and-running.internal
+spec:
+  externalID: node0.c.kubernetes-up-and-running.internal

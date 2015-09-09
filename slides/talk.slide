@@ -17,25 +17,6 @@ Kubernetes Core Concepts.
 - services
 - Kuberbetes network model
 
-* Course Outline
-
-Kubernetes Infrastructure.
-
-- CoreOS
-- Docker
-- etcd
-- Kubernetes controller
-- Kubernetes node
-- Google Compute Engine
-
-* Course Outline
-
-Client tools.
-
-- ssh
-- gcloud
-- kubectl
-
 * Containers
 
 Unix processes not lightweight Virtual Machines
@@ -95,10 +76,6 @@ Runs containers and proxies service requests.
 
 .image images/kubernetes-nodes-2.png
 
-* Node Manifest
-
-.code manifests/node.json
-
 * Pod
 
 Represents a logical application.
@@ -107,10 +84,6 @@ Represents a logical application.
 - Shared namespaces
 
 .image images/pod.png
-
-* Pod Manifest
-
-.code manifests/pod.json
 
 * Scheduler
 
@@ -142,10 +115,6 @@ Manages a replicated set of pods.
 
 .image images/kubernetes-rc-reschedule.png
 
-* Replication Controller Manifest
-
-.code manifests/replication-controller.json
-
 * Service
 
 Service discovery for pods.
@@ -154,9 +123,5 @@ Service discovery for pods.
 - Virutal IP per service (avoid port collisions)
 - Basic round-robin algorithm
 - Dynamic backends based on label queries 
-
-* Service Manifest
-
-.code manifests/service.json
 
 * Time to get Hands On
