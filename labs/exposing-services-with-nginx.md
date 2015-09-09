@@ -31,14 +31,23 @@ sudo bash -c 'echo "NGINX_EXTERNAL_IP inspector.PROJECT_ID.io" >> /etc/hosts'
 gcloud compute ssh nginx
 ```
 
-```
-git clone https://github.com/kelseyhightower/intro-to-kubernetes-workshop.git
-```
-
-Review the nginx vhost configuration:
+Create the inspector nginx vhost configuration:
 
 ```
-cat intro-to-kubernetes-workshop/nginx/inspector.conf
+cat <<EOF > inspector.conf
+upstream inspector {
+    least_conn;
+    server node0.c.PROJECT_ID.internal:36000;
+    server node1.c.PROJECT_ID.internal:36000;
+}
+
+server {
+    server_name         inspector.PROJECT_ID.io;
+    location / {
+        proxy_pass http://inspector;
+    }
+}
+EOF
 ```
 
 Substitute the project name:
@@ -49,11 +58,11 @@ PROJECT_ID=$(curl -H "Metadata-Flavor: Google" \
 ```
 
 ```
-sed -i -e "s/PROJECT_ID/${PROJECT_ID}/g;" intro-to-kubernetes-workshop/nginx/inspector.conf
+sed -i -e "s/PROJECT_ID/${PROJECT_ID}/g;" inspector.conf
 ```
 
 ```
-cat intro-to-kubernetes-workshop/nginx/inspector.conf
+cat inspector.conf
 ```
 
 Copy the vhost configuration:
@@ -63,7 +72,7 @@ sudo mkdir -p /etc/nginx/conf.d
 ```
 
 ```
-sudo cp intro-to-kubernetes-workshop/nginx/inspector.conf  /etc/nginx/conf.d/
+sudo mv inspector.conf  /etc/nginx/conf.d/
 ```
 
 ### Start nginx
