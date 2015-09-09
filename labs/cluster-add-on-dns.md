@@ -53,20 +53,7 @@ kubectl get pods --namespace=kube-system --watch-only
 ## Test DNS lookups
 
 ```
-cat <<EOF > busybox-pod.yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: busybox
-  namespace: default
-spec:
-  containers:
-  - name: busybox
-    image: busybox
-    command:
-      - sleep
-      - "3600"
-EOF
+curl -O https://storage.googleapis.com/configs.kuar.io/busybox-pod.yaml
 ```
 
 ```
