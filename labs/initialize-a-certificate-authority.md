@@ -15,12 +15,12 @@ sudo mkdir -p /opt/bin
 ```
 
 ```
-sudo curl -o /opt/bin/cfssl https://kuar.io/cfssl
+sudo curl -o /opt/bin/cfssl https://storage.googleapis.com/bin.kuar.io/cfssl
 sudo chmod +x /opt/bin/cfssl
 ```
 
 ```
-sudo curl -o /opt/bin/cfssljson https://kuar.io/cfssljson
+sudo curl -o /opt/bin/cfssljson https://storage.googleapis.com/bin.kuar.io/cfssljson
 sudo chmod +x /opt/bin/cfssljson
 ```
 
