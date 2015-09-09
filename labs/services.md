@@ -23,7 +23,6 @@ spec:
   type: NodePort
   selector:
     app: inspector
-    track: stable
   ports:
   - name: http
     nodePort: 36000
