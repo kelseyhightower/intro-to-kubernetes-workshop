@@ -63,25 +63,7 @@ gcloud compute ssh node1
 ### Create the docker systemd unit file
 
 ```
-cat <<'EOF' > docker.service
-[Unit]
-Description=Docker Application Container Engine
-Documentation=http://docs.docker.io
-
-[Service]
-ExecStart=/usr/bin/docker --daemon \
-  --bip=BRIDGE_IP \
-  --iptables=false \
-  --ip-masq=false \
-  --host=unix:///var/run/docker.sock \
-  --log-level=error \
-  --storage-driver=overlay
-Restart=on-failure
-RestartSec=5
-
-[Install]
-WantedBy=multi-user.target
-EOF
+curl -O https://storage.googleapis.com/configs.kuar.io/docker.service
 ```
 
 Configure the docker unit file
