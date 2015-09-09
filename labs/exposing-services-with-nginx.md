@@ -28,7 +28,7 @@ PROJECT_ID=$(gcloud compute ssh nginx --command \
 Edit etcd hosts on your local machine.
 
 ```
-sudo bash -c 'echo "${NGINX_EXTERNAL_IP} inspector.${PROJECT_ID}.io" >> /etc/hosts'
+echo "${NGINX_EXTERNAL_IP} inspector.${PROJECT_ID}.io"
 ```
 
 ### Configure nginx
