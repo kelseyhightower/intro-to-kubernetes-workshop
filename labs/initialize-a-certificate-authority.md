@@ -29,25 +29,7 @@ sudo chmod +x /opt/bin/cfssljson
 ### Create the CA configuration file
 
 ```
-cat <<EOF > ca-config.json
-{
-  "signing": {
-    "default": {
-      "expiry": "8760h"
-    },
-    "profiles": {
-      "server": {
-        "usages": ["signing", "key encipherment", "server auth"],
-        "expiry": "8760h"
-      },
-      "client": {
-        "usages": ["signing","key encipherment","client auth"],
-        "expiry": "8760h"
-      }
-    }
-  }
-}
-EOF
+curl -O https://storage.googleapis.com/configs.kuar.io/ca-config.json
 ```
 
 ### Generate the CA certificate and private key
@@ -55,24 +37,7 @@ EOF
 Create the CA CSR:
 
 ```
-cat <<EOF > ca-csr.json
-{
-  "CN": "Kubernetes CA",
-  "key": {
-    "algo": "rsa",
-    "size": 2048
-  },
-  "names": [
-    {
-      "C": "US",
-      "L": "Portland",
-      "O": "Kubernetes",
-      "OU": "CA",
-      "ST": "Oregon"
-    }
-  ]
-}
-EOF
+curl -O https://storage.googleapis.com/configs.kuar.io/ca-csr.json
 ```
 
 Generate the CA certificate and private key:
