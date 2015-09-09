@@ -19,6 +19,12 @@ Try hitting the service port on any of the node instances.
 #### laptop
 
 ```
+PROJECT_ID=$(gcloud compute ssh nginx --command \
+  "curl -H 'Metadata-Flavor: Google' \
+  http://metadata.google.internal/computeMetadata/v1/project/project-id")
+```
+
+```
 while true; do curl -s http://inspector.PROJECT_ID.io | \
   grep -o -e 'Version: Inspector [0-9].[0-9].[0-9]'; sleep 1; done
 ```
