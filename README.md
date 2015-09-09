@@ -1,6 +1,6 @@
 # Intro to Kubernetes Workshop
 
-Kubernetes Version: 1.0.3
+Kubernetes Version: 1.0.4
 
 The slides from this workshop are hosted [online](http://go-talks.appspot.com/github.com/kelseyhightower/intro-to-kubernetes-workshop/slides/talk.slide#1)
 
