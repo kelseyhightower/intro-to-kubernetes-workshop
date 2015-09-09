@@ -2,7 +2,9 @@
 
 In this lab you will configure the network between node0 and node1 to ensure cross host connectivity. You will also ensure containers can communicate across hosts and reach the internet.
 
-### Create network routes between Docker on node0 and node1
+## Create network routes between Docker hosts.
+
+### laptop
 
 ```
 gcloud compute routes create default-route-10-200-0-0-24 \
@@ -19,21 +21,33 @@ gcloud compute routes create default-route-10-200-1-0-24 \
 gcloud compute routes list
 ```
 
-### Getting Containers Online
+## Getting Containers Online
+
+By default GCE will not route traffic to the internet for the container subnet. In this section we will configure NAT to workaround the issue.
+
+### node0
 
 ```
-gcloud compute ssh node0 \
-  --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
+gcloud compute ssh node0
 ```
 
 ```
-gcloud compute ssh node1 \
-  --command "sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE"
+sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE
 ```
 
-### Confirm networking
+### node1
 
-#### Terminal 1
+```
+gcloud compute ssh node1
+```
+
+```
+sudo iptables -t nat -A POSTROUTING ! -d 10.0.0.0/8 -o ens4v1 -j MASQUERADE
+```
+
+## Validating Cross Host Container Networking
+
+### Terminal 1
 
 ```
 gcloud compute ssh node0
@@ -46,13 +60,7 @@ docker run -t -i --rm busybox /bin/sh
 ip -f inet addr show eth0
 ```
 
-```
-4: eth0: <BROADCAST,UP,LOWER_UP> mtu 1460 qdisc noqueue state UP group default 
-    inet 10.200.0.2/24 scope global eth0
-       valid_lft forever preferred_lft forever
-```
-
-#### Terminal 2
+### Terminal 2
 
 ```
 gcloud compute ssh node1
