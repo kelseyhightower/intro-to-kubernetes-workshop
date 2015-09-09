@@ -14,6 +14,7 @@ kubectl get pods
 ```
 kubectl run inspector \
   --labels="app=inspector,track=stable" \
+  --replicas=1 \
   --image=b.gcr.io/kuar/inspector:1.0.0
 ```
 
