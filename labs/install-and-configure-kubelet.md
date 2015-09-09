@@ -6,11 +6,29 @@
 gcloud compute ssh node1
 ```
 
-Download the kubelet unit file:
+### Create the kubelet systemd unit file:
 
 ```
-sudo curl https://kuar.io/kubelet.service \
-  -o /etc/systemd/system/kubelet.service
+cat <<'EOF' > kubelet.service
+[Unit]
+Description=Kubernetes Kubelet
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+
+[Service]
+ExecStartPre=/usr/bin/mkdir -p /etc/kubernetes/manifests
+ExecStart=/usr/bin/kubelet \
+  --api-servers=http://node0.c.PROJECT_ID.internal:8080 \
+  --allow-privileged=true \
+  --cluster-dns=10.200.20.10 \
+  --cluster-domain=cluster.local \
+  --config=/etc/kubernetes/manifests \
+  --v=2
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+EOF
 ```
 
 Configure the api-servers flag:
@@ -21,12 +39,16 @@ PROJECT_ID=$(curl -H "Metadata-Flavor: Google" \
 ```
 
 ```
-sudo sed -i -e "s/PROJECT_ID/${PROJECT_ID}/g;" /etc/systemd/system/kubelet.service
+sed -i -e "s/PROJECT_ID/${PROJECT_ID}/g;" kubelet.service
 ```
 
+Review the kubelet unit file:
+
 ```
-cat /etc/systemd/system/kubelet.service
+cat kubelet.service
 ```
+
+Start the kubelet service:
 
 ```
 sudo systemctl daemon-reload
