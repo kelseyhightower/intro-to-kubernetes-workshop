@@ -154,7 +154,14 @@ spec:
       args:
         - "--master=http://127.0.0.1:8080"
         - "--v=2"
-EOF```
+EOF
+```
+
+Copy the pod manifest to the Kubelets configuration directory:
+
+```
+sudo mv kube-controller-pod.yaml /etc/kubernetes/manifests/
+```
 
 Verify:
 
