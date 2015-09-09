@@ -79,7 +79,7 @@ Copy certs
 sudo cp apiserver-key.pem apiserver.pem ca.pem ca-key.pem /var/lib/kubernetes/
 ```
 
-Download the controller pod manifest:
+Create the Kubernetes controller pod manifest:
 
 ```
 cat <<'EOF' > kube-controller-pod.yaml
@@ -154,8 +154,7 @@ spec:
       args:
         - "--master=http://127.0.0.1:8080"
         - "--v=2"
-EOF 
-```
+EOF```
 
 Verify:
 
