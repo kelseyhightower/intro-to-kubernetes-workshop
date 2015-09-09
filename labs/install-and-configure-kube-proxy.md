@@ -47,6 +47,7 @@ spec:
           name: "usr"
         - mountPath: /lib64
           name: "lib64"
+EOF
 ```
 
 Configure the master flag:
