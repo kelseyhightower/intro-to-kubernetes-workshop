@@ -4,14 +4,6 @@ Kubernetes offers a DNS cluster add-on that provides DNS A and SRV records for K
 
 ### laptop
 
-Allow add-ons to query the API server
-
-```
-gcloud compute firewall-rules create default-allow-local-api \
-  --allow tcp:8080 \
-  --source-ranges 10.200.0.0/16
-```
-
 Create the SkyDNS replication controller configuration:
 
 ```
