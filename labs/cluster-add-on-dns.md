@@ -106,6 +106,12 @@ EOF
 Edit the SkyDNS rc config:
 
 ```
+PROJECT_ID=$(gcloud compute ssh node0 --command \
+  "curl -H 'Metadata-Flavor: Google' \
+  http://metadata.google.internal/computeMetadata/v1/project/project-id")
+```
+
+```
 sed -i -e "s/PROJECT_ID/${PROJECT_ID}/g;" skydns-rc.yaml
 ```
 
