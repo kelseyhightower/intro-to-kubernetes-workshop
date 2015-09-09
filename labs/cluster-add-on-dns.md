@@ -164,7 +164,7 @@ Wait for "Running" status
 kubectl get pods --namespace=kube-system --watch-only
 ```
 
-Test DNS lookups
+## Test DNS lookups
 
 ```
 cat <<EOF > busybox-pod.yaml
