@@ -13,29 +13,7 @@ gcloud compute ssh node0
 Create a CSR for the API server:
 
 ```
-cat <<EOF > apiserver-csr.json
-{
-  "CN": "*.c.PROJECT_ID.internal",
-  "hosts": [
-    "127.0.0.1",
-    "EXTERNAL_IP",
-    "*.c.PROJECT_ID.internal"
-  ],
-  "key": {
-    "algo": "rsa",
-    "size": 2048
-  },
-  "names": [
-    {
-      "C": "US",
-      "L": "Portland",
-      "O": "Kubernetes",
-      "OU": "API Server",
-      "ST": "Oregon"
-    }
-  ]
-}
-EOF
+curl -O https://storage.googleapis.com/configs.kuar.io/apiserver-csr.json
 ```
 
 ### Customize apiserver-csr.json
@@ -94,25 +72,7 @@ apiserver.pem
 ## Generate the admin client cert 
 
 ```
-cat <<EOF > admin-csr.json
-{
-  "CN": "admin",
-  "hosts": [""],
-  "key": {
-    "algo": "rsa",
-    "size": 2048
-  },
-  "names": [
-    {
-      "C": "US",
-      "L": "Portland",
-      "O": "Kubernetes",
-      "OU": "Cluster Admins",
-      "ST": "Oregon"
-    }
-  ]
-}
-EOF
+curl -O https://storage.googleapis.com/configs.kuar.io/admin-csr.json
 ```
 
 ```
