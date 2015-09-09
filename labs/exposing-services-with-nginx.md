@@ -4,12 +4,12 @@
 
 ```
 gcloud compute instances create nginx \
-  --image-project coreos-cloud \
-  --image coreos-stable-723-3-0-v20150804 \
-  --boot-disk-size 200GB \
-  --machine-type n1-standard-1 \
-  --can-ip-forward \
-  --scopes compute-rw
+ --image-project coreos-cloud \
+ --image coreos-alpha-794-0-0-v20150903 \
+ --boot-disk-size 200GB \
+ --machine-type n1-standard-1 \
+ --can-ip-forward \
+ --scopes compute-rw
 ```
 
 ### Prep 
