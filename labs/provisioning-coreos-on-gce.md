@@ -14,8 +14,7 @@ gcloud compute instances create node0 \
  --image coreos-alpha-794-0-0-v20150903 \
  --boot-disk-size 200GB \
  --machine-type n1-standard-1 \
- --can-ip-forward \
- --scopes compute-rw
+ --can-ip-forward
 ```
 
 #### node1
@@ -26,8 +25,7 @@ gcloud compute instances create node1 \
  --image coreos-alpha-794-0-0-v20150903 \
  --boot-disk-size 200GB \
  --machine-type n1-standard-1 \
- --can-ip-forward \
- --scopes compute-rw
+ --can-ip-forward
 ```
 
 #### Verify
