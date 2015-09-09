@@ -7,7 +7,7 @@
 #### Linux
 
 ```
-curl -o kubectl https://kuar.io/linux/kubectl
+curl -O https://storage.googleapis.com/bin.kuar.io/linux/kubectl
 chmod +x kubectl
 sudo cp kubectl /usr/local/bin/kubectl
 ```
@@ -15,7 +15,7 @@ sudo cp kubectl /usr/local/bin/kubectl
 #### OS X
 
 ```
-curl -o kubectl https://kuar.io/darwin/kubectl
+curl -O https://storage.googleapis.com/bin.kuar.io/darwin/kubectl
 chmod +x kubectl
 sudo cp kubectl /usr/local/bin/kubectl
 ```
