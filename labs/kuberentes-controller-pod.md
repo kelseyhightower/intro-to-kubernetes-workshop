@@ -67,7 +67,7 @@ sudo cp apiserver-key.pem apiserver.pem ca.pem ca-key.pem /var/lib/kubernetes/
 Create the Kubernetes controller pod manifest:
 
 ```
-curl -O https://storage.googleapis.com/configs.kuar.io/kube-controller-pod.yaml
+curl -O https://storage.googleapis.com/kuar/kube-controller-pod.yaml
 ```
 
 Copy the pod manifest to the Kubelets configuration directory:
