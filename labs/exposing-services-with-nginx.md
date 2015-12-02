@@ -5,7 +5,7 @@
 ```
 gcloud compute instances create nginx \
  --image-project coreos-cloud \
- --image coreos-alpha-815-0-0-v20150924 \
+ --image coreos-stable-835-8-0-v20151201 \
  --boot-disk-size 200GB \
  --machine-type n1-standard-1 \
  --can-ip-forward
