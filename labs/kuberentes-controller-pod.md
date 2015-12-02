@@ -25,6 +25,18 @@ sudo chmod +x /opt/bin/kubelet /opt/bin/kubectl
 curl -O https://storage.googleapis.com/configs.kuar.io/kubelet.service
 ```
 
+Edit the path to the kubelet. Change
+
+```
+ExecStart=/usr/bin/kubelet \
+```
+
+to:
+
+```
+ExecStart=/opt/bin/kubelet \
+```
+
 Configure the api-servers flag:
 
 ```
