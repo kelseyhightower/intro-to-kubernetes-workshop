@@ -9,6 +9,7 @@ gcloud compute ssh node1
 ### Download Kubernetes release tar
 
 ```
+sudo mkdir -p /opt/bin
 wget https://github.com/kubernetes/kubernetes/releases/download/v1.0.6/kubernetes.tar.gz
 tar -xvf kubernetes.tar.gz
 tar -xvf kubernetes/server/kubernetes-server-linux-amd64.tar.gz
