@@ -16,11 +16,7 @@ tar -xvf kubernetes.tar.gz
 tar -xvf kubernetes/server/kubernetes-server-linux-amd64.tar.gz
 sudo cp kubernetes/server/bin/kubelet /opt/bin/
 sudo cp kubernetes/platforms/linux/amd64/kubectl /opt/bin/
-chmod +x /opt/bin/kubelet /opt/bin/kubectl 
-```
-
-```
-
+sudo chmod +x /opt/bin/kubelet /opt/bin/kubectl 
 ```
 
 ### Create the kubelet systemd unit file:
