@@ -27,7 +27,7 @@ Create a VM named `workshop-test`
 ```
 gcloud compute instances create workshop-test \
  --image-project coreos-cloud \
- --image coreos-stable-835-8-0-v20151201 \
+ --image coreos-stable-835-12-0-v20160202 \
  --boot-disk-size 200GB \
  --machine-type n1-standard-1 \
  --can-ip-forward \
