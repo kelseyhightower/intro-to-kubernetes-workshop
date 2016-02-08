@@ -11,7 +11,7 @@ In this lab you will provision two GCE instances running CoreOS.
 ```
 gcloud compute instances create node0 \
  --image-project coreos-cloud \
- --image coreos-stable-835-8-0-v20151201 \
+ --image coreos-stable-835-12-0-v20160202 \
  --boot-disk-size 200GB \
  --machine-type n1-standard-1 \
  --can-ip-forward
@@ -22,7 +22,7 @@ gcloud compute instances create node0 \
 ```
 gcloud compute instances create node1 \
  --image-project coreos-cloud \
- --image coreos-stable-835-8-0-v20151201 \
+ --image coreos-stable-835-12-0-v20160202 \
  --boot-disk-size 200GB \
  --machine-type n1-standard-1 \
  --can-ip-forward
