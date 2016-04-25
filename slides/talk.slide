@@ -120,7 +120,7 @@ Manages a replicated set of pods.
 Service discovery for pods.
 
 - Proxy runs on each node
-- Virutal IP per service (avoid port collisions)
+- Virtual IP per service (avoid port collisions)
 - Basic round-robin algorithm
 - Dynamic backends based on label queries 
 
