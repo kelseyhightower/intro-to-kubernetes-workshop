@@ -65,7 +65,7 @@ The slides from this workshop are hosted [online](http://go-talks.appspot.com/gi
 
 ## Links
 
-  * [Kubernetes](http://googlecloudplatform.github.io/kubernetes)
+  * [Kubernetes](https://github.com/GoogleCloudPlatform/kubernetes-engine-samples)
   * [gcloud Tool Guide](https://cloud.google.com/sdk/gcloud)
   * [Docker](https://docs.docker.com)
   * [CoreOS](https://coreos.com)
